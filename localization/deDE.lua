@@ -1,0 +1,40 @@
+local ADDON_NAME, ns = ...
+local L = ns.NewLocale('deDE')
+if not L then return end
+
+L['trainer_alchemy'] = 'Alchemielehrer'
+L['trainer_blacksmithing'] = 'Schmiedekunstlehrer'
+L['trainer_enchanting'] = 'Verzauberkunstlehrer'
+L['trainer_engineering'] = 'Ingenieurslehrer'
+L['trainer_herbalism'] = 'Kräuterkundelehrer'
+L['trainer_inscription'] = 'Inschriftenkundelehrer'
+L['trainer_jewelcrafting'] = 'Juwelenschmiedlehrer'
+L['trainer_leatherworking'] = 'Lederverarbeitungslehrer'
+L['trainer_mining'] = 'Bergbaulehrer'
+L['trainer_skinning'] = 'Kürschnereilehrer'
+L['trainer_tailoring'] = 'Schneidereilehrer'
+L['trainer_archaeology'] = 'Archäologielehrer'
+L['trainer_cooking'] = 'Kochkunstlehrer'
+L['trainer_fishing'] = 'Angellehrer'
+
+L['bank'] = 'Bank'
+L['auction_house'] = 'Auktionshaus'
+
+L['options_icons_mailbox'] = 'Briefkasten'
+L['options_icons_mailbox_desc'] = 'Zeigt die Position von Briefkästen an.'
+L['options_icons_innkeeper'] = 'Gastwirt'
+L['options_icons_innkeeper_desc'] = 'Zeigt die Position von Gastwirten an.'
+L['options_icons_banker'] = 'Bankier'
+L['options_icons_banker_desc'] = 'Zeigt die Position von Bankieren oder Banken an.'
+L['options_icons_auctioneer'] = 'Auktionator'
+L['options_icons_auctioneer_desc'] = 'Zeigt die Position von Auktionatoren oder Auktionshäusern an.'
+L['options_icons_barbershop'] = 'Barbier'
+L['options_icons_barbershop_desc'] = 'Zeigt die Position von Barbieren an.'
+L['options_icons_voidstorage'] = 'Leerenlager'
+L['options_icons_voidstorage_desc'] = 'Zeigt die Position vom Leerenlager an.'
+L['options_icons_transmogrifier'] = 'Transmogrifizierer'
+L['options_icons_transmogrifier_desc'] = 'Zeigt die Position vom Transmogrifizierer an.'
+L['options_icons_stablemaster'] = 'Stallmeister'
+L['options_icons_stablemaster_desc'] = 'Zeigt die Position vom Stallmeister an.'
+
+L['olly'] = 'Um die Haustiere vom Händler kaufen zu können musst du die Mission {mission:2122} abschließen. Die Mission wurd durch das Item {item:166242} freigeschalten welches du zufällig nach einem PVP Haustierkampf erhältest.'

@@ -1,0 +1,12 @@
+## Interface: 100000
+## Title: HandyNotes: Cities
+## Version: 1
+## Notes: Cities Notes
+## OptionalDeps: Ace3
+## RequiredDeps: HandyNotes
+## X-Embeds: Ace3
+## SavedVariables: HandyNotes_CitiesDB
+
+embeds.xml
+core\core.xml
+plugin.xml
