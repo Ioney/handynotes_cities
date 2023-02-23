@@ -9,6 +9,7 @@ local L = ns.locale
 local Green = ns.status.Green
 local Orange = ns.status.Orange
 local Red = ns.status.Red
+local White = ns.color.White
 
 -------------------------------------------------------------------------------
 
@@ -145,7 +146,11 @@ end
 
 function Achievement:GetText()
     local _, name, _, _, _, _, _, _, _, icon = GetAchievementInfo(self.id)
-    return Icon(icon) .. ACHIEVEMENT_COLOR_CODE .. '[' .. name .. ']|r'
+    local text = Icon(icon) .. ACHIEVEMENT_COLOR_CODE .. '[' .. name .. ']|r'
+    if self.note then
+        text = text .. ns.color.White('\n(' .. self.note .. ')')
+    end
+    return text
 end
 
 function Achievement:GetStatus()
@@ -235,10 +240,7 @@ end
 
 function Follower:GetText()
     local text = C_Garrison.GetFollowerInfo(self.id).name
-    if self.icon then text = Icon(self.icon) .. text
-    else
-        text = Icon(C_Garrison.GetFollowerInfo(self.id).portraitIconID) .. text
-    end
+    if self.icon then text = Icon(self.icon) .. text end
     text = text .. ' (' .. self:GetType('locale') .. ')'
     if self.note then
         text = text .. ' (' .. ns.RenderLinks(self.note, true) .. ')'
@@ -248,7 +250,7 @@ end
 
 function Follower:IsObtained()
     local followers = C_Garrison.GetFollowers(self:GetType('enum'))
-    for i = 1, #followers do
+    for i = 1, followers and #followers or 0 do
         local followerID = followers[i].followerID
         if (self.id == followerID) then return false end
     end
@@ -317,6 +319,19 @@ function Item:GetStatus()
 end
 
 -------------------------------------------------------------------------------
+----------------------------------- HEIRLOOM ----------------------------------
+-------------------------------------------------------------------------------
+
+local Heirloom = Class('Heirloom', Item, {type = L['heirloom']})
+
+function Heirloom:IsObtained() return C_Heirloom.PlayerHasHeirloom(self.item) end
+
+function Heirloom:GetStatus()
+    local collected = C_Heirloom.PlayerHasHeirloom(self.item)
+    return collected and Green(L['known']) or Red(L['missing'])
+end
+
+-------------------------------------------------------------------------------
 ------------------------------------ MOUNT ------------------------------------
 -------------------------------------------------------------------------------
 
@@ -346,7 +361,7 @@ function Pet:Initialize(attrs)
         Reward.Initialize(self, attrs)
         local name, icon = C_PetJournal.GetPetInfoBySpeciesID(self.id)
         self.itemIcon = icon
-        self.itemLink = '|cff1eff00[' .. name .. ']|r'
+        self.itemLink = ns.color.Green(name)
     end
 end
 
@@ -408,6 +423,33 @@ function Spell:IsObtained() return IsSpellKnown(self.spell) end
 function Spell:GetStatus()
     local collected = IsSpellKnown(self.spell)
     return collected and Green(L['known']) or Red(L['missing'])
+end
+
+-------------------------------------------------------------------------------
+------------------------------------ TITLE ------------------------------------
+-------------------------------------------------------------------------------
+
+local Title = Class('Title', Reward, {type = L['title']})
+
+function Title:GetText()
+    local text = self.pattern
+    local titleName, _ = GetTitleName(self.id)
+    local title = strtrim(titleName)
+    text = string.gsub(text, '{title}', title)
+    local player = UnitName('player')
+    text = string.gsub(text, '{player}', player)
+    text = White(text)
+    if self.type then text = text .. ' (' .. self.type .. ')' end
+    if self.note then
+        text = text .. ' (' .. ns.RenderLinks(self.note, true) .. ')'
+    end
+    return text
+end
+
+function Title:IsObtained() return IsTitleKnown(self.id) end
+
+function Title:GetStatus()
+    return self:IsObtained() and Green(L['known']) or Red(L['missing'])
 end
 
 -------------------------------------------------------------------------------
@@ -518,19 +560,6 @@ function Transmog:GetStatus()
 end
 
 -------------------------------------------------------------------------------
------------------------------------ HEIRLOOM ----------------------------------
--------------------------------------------------------------------------------
-
-local Heirloom = Class('Heirloom', Item, {type = L['heirloom']})
-
-function Heirloom:IsObtained() return C_Heirloom.PlayerHasHeirloom(self.item) end
-
-function Heirloom:GetStatus()
-    local collected = C_Heirloom.PlayerHasHeirloom(self.item)
-    return collected and Green(L['known']) or Red(L['missing'])
-end
-
--------------------------------------------------------------------------------
 
 ns.reward = {
     Reward = Reward,
@@ -540,11 +569,12 @@ ns.reward = {
     Currency = Currency,
     Follower = Follower,
     Item = Item,
+    Heirloom = Heirloom,
     Mount = Mount,
     Pet = Pet,
     Quest = Quest,
     Spell = Spell,
+    Title = Title,
     Toy = Toy,
-    Transmog = Transmog,
-    Heirloom = Heirloom
+    Transmog = Transmog
 }

@@ -12,9 +12,6 @@ ns.optionDefaults = {
     profile = {
         show_worldmap_button = true,
 
-        show_known_prof = false,
-        show_prof_icon = true,
-
         -- visibility
         hide_done_rares = false,
         hide_minimap = false,
@@ -390,7 +387,7 @@ function ns.CreateGroupOptions(map, group)
                     width = 'full',
                     func = function()
                         if not WorldMapFrame:IsShown() then
-                            InterfaceOptionsFrame:Hide()
+                            HideUIPanel(SettingsPanel)
                             HideUIPanel(GameMenuFrame)
                         end
                         OpenWorldMap(map.id)
