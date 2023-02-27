@@ -233,25 +233,8 @@ function Profession.getters:icon()
         self.glow = ns.poi.Glow({icon = ns.GetGlowPath('profession')})
         return 'profession'
     end
-    local P = ns.Profession
-    local icon = 134400
-    if self.profession == P.Alchemy then icon = P.Alchemy.icon end
-    if self.profession == P.Blacksmithing then icon = P.Blacksmithing.icon end
-    if self.profession == P.Enchanting then icon = P.Enchanting.icon end
-    if self.profession == P.Engineering then icon = P.Engineering.icon end
-    if self.profession == P.Herbalism then icon = P.Herbalism.icon end
-    if self.profession == P.Inscription then icon = P.Inscription.icon end
-    if self.profession == P.Jewelcrafting then icon = P.Jewelcrafting.icon end
-    if self.profession == P.Leatherworking then icon = P.Leatherworking.icon end
-    if self.profession == P.Mining then icon = P.Mining.icon end
-    if self.profession == P.Skinning then icon = P.Skinning.icon end
-    if self.profession == P.Tailoring then icon = P.Tailoring.icon end
-    if self.profession == P.Archaeology then icon = P.Archaeology.icon end
-    if self.profession == P.Cooking then icon = P.Cooking.icon end
-    if self.profession == P.Fishing then icon = P.Fishing.icon end
-
     self.glow = ns.poi.Glow({icon = ns.GetGlowPath(prof)})
-    return icon
+    return self.profession.icon
 end
 
 -------------------------------------------------------------------------------
