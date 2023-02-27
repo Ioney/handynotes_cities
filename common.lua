@@ -69,24 +69,25 @@ ns.icons.portal_trainer = {Icon('portal_trainer'), Glow('profession_glow')}
 ------------------------------------ GROUPS -----------------------------------
 -------------------------------------------------------------------------------
 
-ns.groups.MAILBOX = Group('mailbox', 'mailbox')
-ns.groups.INNKEEPER = Group('innkeeper', 'innkeeper')
-ns.groups.STABLEMASTER = Group('stablemaster', 'stablemaster',
-                               {defaults = ns.GROUP_HIDDEN})
-ns.groups.BARBERSHOP = Group('barbershop', 'barbershop',
-                             {defaults = ns.GROUP_HIDDEN})
-ns.groups.PROFESSION = Group('profession', 'profession',
-                             {defaults = ns.GROUP_HIDDEN})
 ns.groups.BANKER = Group('banker', 'banker')
+ns.groups.INNKEEPER = Group('innkeeper', 'innkeeper')
+ns.groups.MAILBOX = Group('mailbox', 'mailbox')
 ns.groups.AUCTIONEER = Group('auctioneer', 'auctioneer',
                              {defaults = ns.GROUP_HIDDEN})
+ns.groups.BARBERSHOP = Group('barbershop', 'barbershop',
+                             {defaults = ns.GROUP_HIDDEN})
+ns.groups.FLIGHTPOINT = Group('flightpoint', 'flight_point_y')
+ns.groups.PORTALTRAINER = Group('portaltrainer', 237508, {
+    IsEnabled = function(self) -- Only display group for skinning players
+        local _, _, class = UnitClass("player")
+        if not class == 8 then return true end
+    end
+})
+ns.groups.PROFESSION = Group('profession', 'profession')
+ns.groups.STABLEMASTER = Group('stablemaster', 'stablemaster')
 ns.groups.TRANSMOGRIFIER = Group('transmogrifier', 'transmogrifier',
                                  {defaults = ns.GROUP_HIDDEN})
 ns.groups.VOIDSTORAGE = Group('voidstorage', 'voidstorage',
-                              {defaults = ns.GROUP_HIDDEN})
-ns.groups.PORTALTRAINER = Group('portaltrainer', 237508,
-                                {defaults = ns.GROUP_HIDDEN})
-ns.groups.FLIGHTPOINT = Group('flightpoint', 'flight_point_y',
                               {defaults = ns.GROUP_HIDDEN})
 
 -------------------------------------------------------------------------------
@@ -95,182 +96,191 @@ ns.groups.FLIGHTPOINT = Group('flightpoint', 'flight_point_y',
 
 ns.node.Mailbox = Class('Mailbox', ns.node.Node, {
     group = ns.groups.MAILBOX,
-    label = L['options_icons_mailbox'],
-    icon = 'mailbox',
-    scale = 1
+    label = _G.MINIMAP_TRACKING_MAILBOX,
+    icon = 'mailbox'
 })
 
 -------------------------------------------------------------------------------
 ---------------------------------- Innkeeper ----------------------------------
 -------------------------------------------------------------------------------
 
-local Innkeeper = Class('Innkeeper', ns.node.Node, {
+ns.node.Innkeeper = Class('Innkeeper', ns.node.NPC, {
     group = ns.groups.INNKEEPER,
-    label = L['options_icons_innkeeper'],
-    icon = 'innkeeper',
-    scale = 1
+    sublabel = _G.MINIMAP_TRACKING_INNKEEPER,
+    icon = 'innkeeper'
 })
-
-function Innkeeper.getters:note()
-    if self.id then return ns.color.White('{npc:' .. self.id .. '}') or nil end
-end
-
-ns.node.Innkeeper = Innkeeper
 
 -------------------------------------------------------------------------------
 --------------------------------- Stablemaster --------------------------------
 -------------------------------------------------------------------------------
 
-ns.node.Stablemaster = Class('Stablemaster', ns.node.Node, {
+ns.node.Stablemaster = Class('Stablemaster', ns.node.NPC, {
     group = ns.groups.STABLEMASTER,
-    label = L['options_icons_stablemaster'],
-    icon = 'stablemaster',
-    scale = 1
+    sublabel = _G.MINIMAP_TRACKING_STABLEMASTER,
+    icon = 'stablemaster'
 })
 
 -------------------------------------------------------------------------------
----------------------------------- Barbershop ---------------------------------
+----------------------------------- BARBER ------------------------------------
 -------------------------------------------------------------------------------
 
-ns.node.Barbershop = Class('Barbershop', ns.node.Node, {
+ns.node.Barber = Class('Barber', ns.node.NPC, {
     group = ns.groups.BARBERSHOP,
-    label = L['options_icons_barbershop'],
-    icon = 'barbershop',
-    scale = 1
+    sublabel = _G.MINIMAP_TRACKING_BARBER,
+    icon = 'barbershop'
 })
 
 -------------------------------------------------------------------------------
 ------------------------------ Profession Trainer -----------------------------
 -------------------------------------------------------------------------------
-local function hasProf(prof)
+
+ns.Profession = {
+    Alchemy = {id = 171, icon = 'prof_alchemy'},
+    Blacksmithing = {id = 164, icon = 'prof_blacksmithing'},
+    Enchanting = {id = 333, icon = 'prof_enchanting'},
+    Engineering = {id = 202, icon = 'prof_engineering'},
+    Herbalism = {id = 182, icon = 'prof_herbalism'},
+    Inscription = {id = 773, icon = 'prof_inscription'},
+    Jewelcrafting = {id = 755, icon = 'prof_jewelcrafting'},
+    Leatherworking = {id = 165, icon = 'prof_leatherworking'},
+    Mining = {id = 186, icon = 'prof_mining'},
+    Skinning = {id = 393, icon = 'prof_skinning'},
+    Tailoring = {id = 197, icon = 'prof_tailoring'},
+    Archaeology = {id = 794, icon = 'prof_archaeology'},
+    Cooking = {id = 185, icon = 'prof_cooking'},
+    Fishing = {id = 356, icon = 'prof_fishing'}
+}
+
+local function hasProf(profession)
     for _, P in GetProfessions() do
         local _, _, _, _, _, _, p = GetProfessionInfo(P)
-        if prof == p then return true end
+        if profession.id == p then return true end
     end
     return false
 end
 
 local Profession = Class('Profession', ns.node.NPC, {
     group = ns.groups.PROFESSION,
-    scale = 1,
     IsEnabled = function(self)
-        if ns:GetOpt("show_known_prof") and not hasProf(self.prof) then
+        if ns:GetOpt("show_known_prof") and not hasProf(self.profession) then
             return false
         end
         return ns.node.Rare.IsEnabled(self)
     end
 })
 
-local Alchemy = Class('Alchemy', Profession,
-                      {prof = 171, note = L['trainer_alchemy']})
-local Blacksmithing = Class('Blacksmithing', Profession,
-                            {prof = 164, note = L['trainer_blacksmithing']})
-local Enchanting = Class('Enchanting', Profession,
-                         {prof = 333, note = L['trainer_enchanting']})
-local Engineering = Class('Engineering', Profession,
-                          {prof = 202, note = L['trainer_engineering']})
-local Herbalism = Class('Herbalism', Profession,
-                        {prof = 182, note = L['trainer_herbalism']})
-local Inscription = Class('Inscription', Profession,
-                          {prof = 773, note = L['trainer_inscription']})
-local Jewelcrafting = Class('Jewelcrafting', Profession,
-                            {prof = 755, note = L['trainer_jewelcrafting']})
-local Leatherworking = Class('Leatherworking', Profession,
-                             {prof = 165, note = L['trainer_leatherworking']})
-local Mining = Class('Mining', Profession,
-                     {prof = 186, note = L['trainer_mining']})
-local Skinning = Class('Skinning', Profession,
-                       {prof = 393, note = L['trainer_skinning']})
-local Tailoring = Class('Tailoring', Profession,
-                        {prof = 197, note = L['trainer_tailoring']})
-local Archaeology = Class('Archaeology', Profession,
-                          {prof = 794, note = L['trainer_archaeology']})
-local Cooking = Class('Cooking', Profession,
-                      {prof = 185, note = L['trainer_cooking']})
-local Fishing = Class('Fishing', Profession,
-                      {prof = 356, note = L['trainer_fishing']})
-local FirstAid = Class('FirstAid', Profession,
-                       {prof = 197, note = L['trainer_firstaid'],firstaid = true})
+ns.node.Trainer = {
+    Alchemy = Class('Alchemy', Profession, {
+        profession = ns.Profession.Alchemy,
+        sublabel = L['trainer_alchemy']
+    }),
+    Blacksmithing = Class('Blacksmithing', Profession, {
+        profession = ns.Profession.Blacksmithing,
+        sublabel = L['trainer_blacksmithing']
+    }),
+    Enchanting = Class('Enchanting', Profession, {
+        profession = ns.Profession.Enchanting,
+        sublabel = L['trainer_enchanting']
+    }),
+    Engineering = Class('Engineering', Profession, {
+        profession = ns.Profession.Engineering,
+        sublabel = L['trainer_engineering']
+    }),
+    Herbalism = Class('Herbalism', Profession, {
+        profession = ns.Profession.Herbalism,
+        sublabel = L['trainer_herbalism']
+    }),
+    Inscription = Class('Inscription', Profession, {
+        profession = ns.Profession.Inscription,
+        sublabel = L['trainer_inscription']
+    }),
+    Jewelcrafting = Class('Jewelcrafting', Profession, {
+        profession = ns.Profession.Jewelcrafting,
+        sublabel = L['trainer_jewelcrafting']
+    }),
+    Leatherworking = Class('Leatherworking', Profession, {
+        profession = ns.Profession.Leatherworking,
+        sublabel = L['trainer_leatherworking']
+    }),
+    Mining = Class('Mining', Profession, {
+        profession = ns.Profession.Mining,
+        sublabel = L['trainer_mining']
+    }),
+    Skinning = Class('Skinning', Profession, {
+        profession = ns.Profession.Skinning,
+        sublabel = L['trainer_skinning']
+    }),
+    Tailoring = Class('Tailoring', Profession, {
+        profession = ns.Profession.Tailoring,
+        sublabel = L['trainer_tailoring']
+    }),
+    Archaeology = Class('Archaeology', Profession, {
+        profession = ns.Profession.Archaeology,
+        sublabel = L['trainer_archaeology']
+    }),
+    Cooking = Class('Cooking', Profession, {
+        profession = ns.Profession.Cooking,
+        sublabel = L['trainer_cooking']
+    }),
+    Fishing = Class('Fishing', Profession, {
+        profession = ns.Profession.Fishing,
+        sublabel = L['trainer_fishing']
+    })
+}
 
 function Profession.getters:icon()
     if not ns:GetOpt("show_prof_icon") then
         self.glow = ns.poi.Glow({icon = ns.GetGlowPath('profession')})
         return 'profession'
     end
-    local prof = 134400
-    if self.prof == 171 then prof = 'prof_alchemy' end
-    if self.prof == 164 then prof = 'prof_blacksmithing' end
-    if self.prof == 333 then prof = 'prof_enchanting' end
-    if self.prof == 202 then prof = 'prof_engineering' end
-    if self.prof == 182 then prof = 'prof_herbalism' end
-    if self.prof == 773 then prof = 'prof_inscription' end
-    if self.prof == 755 then prof = 'prof_jewelcrafting' end
-    if self.prof == 165 then prof = 'prof_leatherworking' end
-    if self.prof == 186 then prof = 'prof_mining' end
-    if self.prof == 393 then prof = 'prof_skinning' end
-    if self.prof == 197 then prof = 'prof_tailoring' end
-    if self.prof == 794 then prof = 'prof_archaeology' end
-    if self.prof == 185 then prof = 'prof_cooking' end
-    if self.prof == 356 then prof = 'prof_fishing' end
-    if self.firstaid then prof = 'prof_firstaid' end
+    local P = ns.Profession
+    local icon = 134400
+    if self.profession == P.Alchemy then icon = P.Alchemy.icon end
+    if self.profession == P.Blacksmithing then icon = P.Blacksmithing.icon end
+    if self.profession == P.Enchanting then icon = P.Enchanting.icon end
+    if self.profession == P.Engineering then icon = P.Engineering.icon end
+    if self.profession == P.Herbalism then icon = P.Herbalism.icon end
+    if self.profession == P.Inscription then icon = P.Inscription.icon end
+    if self.profession == P.Jewelcrafting then icon = P.Jewelcrafting.icon end
+    if self.profession == P.Leatherworking then icon = P.Leatherworking.icon end
+    if self.profession == P.Mining then icon = P.Mining.icon end
+    if self.profession == P.Skinning then icon = P.Skinning.icon end
+    if self.profession == P.Tailoring then icon = P.Tailoring.icon end
+    if self.profession == P.Archaeology then icon = P.Archaeology.icon end
+    if self.profession == P.Cooking then icon = P.Cooking.icon end
+    if self.profession == P.Fishing then icon = P.Fishing.icon end
 
     self.glow = ns.poi.Glow({icon = ns.GetGlowPath(prof)})
-    return prof
+    return icon
 end
-
-ns.node.Profession = Profession
-
-ns.node.Alchemy = Alchemy
-ns.node.Blacksmithing = Blacksmithing
-ns.node.Enchanting = Enchanting
-ns.node.Engineering = Engineering
-ns.node.Herbalism = Herbalism
-ns.node.Inscription = Inscription
-ns.node.Jewelcrafting = Jewelcrafting
-ns.node.Leatherworking = Leatherworking
-ns.node.Mining = Mining
-ns.node.Skinning = Skinning
-ns.node.Tailoring = Tailoring
-ns.node.Archaeology = Archaeology
-ns.node.Cooking = Cooking
-ns.node.Fishing = Fishing
-ns.node.FirstAid = FirstAid
 
 -------------------------------------------------------------------------------
 --------------------------------- PortalTrainer -------------------------------
 -------------------------------------------------------------------------------
 
-local PortalTrainer = Class('PortalTrainer', ns.node.NPC, {
+ns.node.PortalTrainer = Class('PortalTrainer', ns.node.NPC, {
     group = ns.groups.PORTALTRAINER,
-    label = L['portal_trainer'],
-    icon = 'portal_trainer',
-    scale = 1,
-    IsEnabled = function(self)
-        local _, _, class = UnitClass("player")
-        if not class == 8 then return true end
-        -- return ns.node.Rare.IsEnabled(self)
-    end
+    sublabel = L['portal_trainer'],
+    icon = 'portal_trainer'
 })
-
-function PortalTrainer.getters:note()
-    if self.id then return ns.color.White('{npc:' .. self.id .. '}') or nil end
-end
-
-ns.node.PortalTrainer = PortalTrainer
 
 -------------------------------------------------------------------------------
 ------------------------------------- Bank ------------------------------------
 -------------------------------------------------------------------------------
 
-local Banker = Class('Banker', ns.node.Node, {
-    group = ns.groups.BANKER,
-    label = L['bank'],
-    icon = 'banker',
-    scale = 1
-})
+local Banker = Class('Banker', ns.node.Node,
+                     {group = ns.groups.BANKER, icon = 'banker'})
 
-function Banker.getters:note()
-    if self.id then return ns.color.White('{npc:' .. self.id .. '}') or nil end
+function Banker.getters:label()
+    if self.id then
+        return ('{npc:%d}'):format(self.id)
+    else
+        return _G.BANK
+    end
+end
+
+function Banker.getters:sublabel()
+    if self.id then return _G.MINIMAP_TRACKING_BANKER end
 end
 
 ns.node.Banker = Banker
@@ -279,21 +289,19 @@ ns.node.Banker = Banker
 ---------------------------------- Auctioneer ---------------------------------
 -------------------------------------------------------------------------------
 
-local Auctioneer = Class('Auctioneer', ns.node.Node, {
-    group = ns.groups.AUCTIONEER,
-    icon = 'auctioneer',
-    scale = 1
-})
+local Auctioneer = Class('Auctioneer', ns.node.Node,
+                         {group = ns.groups.AUCTIONEER, icon = 'auctioneer'})
 
 function Auctioneer.getters:label()
     if self.id then
         return '{npc:' .. self.id .. '}'
     else
-        return L['auction_house']
+        return _G.BUTTON_LAG_AUCTIONHOUSE
     end
 end
-function Auctioneer.getters:note()
-    if self.id then return L['options_icons_auctioneer'] end
+
+function Auctioneer.getters:sublabel()
+    if self.id then return _G.MINIMAP_TRACKING_AUCTIONEER end
 end
 
 ns.node.Auctioneer = Auctioneer
@@ -302,22 +310,20 @@ ns.node.Auctioneer = Auctioneer
 -------------------------------- Transmogrifier -------------------------------
 -------------------------------------------------------------------------------
 
-ns.node.Transmogrifier = Class('Transmogrifier', ns.node.Node, {
+ns.node.Transmogrifier = Class('Transmogrifier', ns.node.NPC, {
     group = ns.groups.TRANSMOGRIFIER,
-    note = L['options_icons_transmogrifier'],
-    icon = 'transmogrifier',
-    scale = 1
+    sublabel = _G.MINIMAP_TRACKING_TRANSMOGRIFIER,
+    icon = 'transmogrifier'
 })
 
 -------------------------------------------------------------------------------
 --------------------------------- Voidstorage ---------------------------------
 -------------------------------------------------------------------------------
 
-ns.node.Voidstorage = Class('Voidstorage', ns.node.Node, {
+ns.node.Voidstorage = Class('Voidstorage', ns.node.NPC, {
     group = ns.groups.VOIDSTORAGE,
-    note = L['options_icons_voidstorage'],
-    icon = 'voidstorage',
-    scale = 1
+    sublabel = _G.VOID_STORAGE,
+    icon = 'voidstorage'
 })
 
 -------------------------------------------------------------------------------
@@ -326,14 +332,37 @@ ns.node.Voidstorage = Class('Voidstorage', ns.node.Node, {
 
 ns.node.Flightpoint = Class('Flightpoint', ns.node.Node, {
     group = ns.groups.FLIGHTPOINT,
-    label = L['flight_point'],
-    icon = 'flight_point_y',
-    scale = 1
+    sublabel = _G.MINIMAP_TRACKING_FLIGHTMASTER,
+    icon = 'flight_point_y'
 })
 
 -------------------------------------------------------------------------------
 ----------------------------------- Vendor ------------------------------------
 -------------------------------------------------------------------------------
 
-ns.node.Vendor = Class('Vendor', ns.node.Collectible,
-                       {group = ns.groups.VENDOR, icon = 'vendor', scale = 1})
+ns.node.Vendor = Class('Vendor', ns.node.NPC, {
+    group = ns.groups.VENDOR,
+    sublabel = _G.BATTLE_PET_SOURCE_3,
+    icon = 'vendor'
+})
+
+-------------------------------------------------------------------------------
+-------------------------------- DRAGONFLIGHT ---------------------------------
+-------------------------------------------------------------------------------
+
+ns.icons.rostrum = {Icon('rostrum'), Glow('rostrum')}
+
+ns.groups.ROSTRUM = Group('ROSTRUM', 'rostrum')
+ns.groups.WORKORDERS = Group('WORKORDERS', 'scroll')
+
+ns.node.Rostrum = Class('Rostrum', ns.node.Node, {
+    group = ns.groups.ROSTRUM,
+    label = L['rostrum_of_transformation'],
+    icon = 'rostrum'
+})
+
+ns.node.WorkOrders = Class('WorkOrders', ns.node.NPC, {
+    group = ns.groups.WORKORDERS,
+    sublabel = _G.CAPACITANCE_WORK_ORDERS,
+    icon = 'scroll'
+})
