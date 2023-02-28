@@ -276,11 +276,7 @@ local Auctioneer = Class('Auctioneer', ns.node.Node,
                          {group = ns.groups.AUCTIONEER, icon = 'auctioneer'})
 
 function Auctioneer.getters:label()
-    if self.id then
-        return '{npc:' .. self.id .. '}'
-    else
-        return _G.BUTTON_LAG_AUCTIONHOUSE
-    end
+    return self.id and '{npc:' .. self.id .. '}' or _G.BUTTON_LAG_AUCTIONHOUSE
 end
 
 function Auctioneer.getters:sublabel()
@@ -323,11 +319,15 @@ ns.node.Flightpoint = Class('Flightpoint', ns.node.Node, {
 ----------------------------------- Vendor ------------------------------------
 -------------------------------------------------------------------------------
 
-ns.node.Vendor = Class('Vendor', ns.node.NPC, {
+local Vendor = Class('Vendor', ns.node.NPC, {
     group = ns.groups.VENDOR,
-    sublabel = _G.BATTLE_PET_SOURCE_3,
-    icon = 'vendor'
+    sublabel = _G.BATTLE_PET_SOURCE_3
 })
+
+function Vendor.getters:icon() return
+    self.repair and 'vendor_repair' or 'vendor' end
+
+ns.node.Vendor = Vendor
 
 -------------------------------------------------------------------------------
 -------------------------------- DRAGONFLIGHT ---------------------------------
