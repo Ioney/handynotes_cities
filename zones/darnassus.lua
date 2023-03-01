@@ -31,8 +31,6 @@ map.nodes[54525339] = Mailbox()
 map.nodes[62543280] = Innkeeper({id = 6735})
 map.nodes[48431499] = Innkeeper({id = 48735})
 
-map.nodes[0000] = ns.node.Barber()
-
 map.nodes[43605102] = Banker()
 
 map.nodes[54985840] = Auctioneer()

@@ -33,7 +33,7 @@ map.nodes[66626541] = Mailbox()
 
 map.nodes[51749396] = Innkeeper({id = 3628})
 
-map.nodes[61306464] = ns.node.Barber()
+map.nodes[61306464] = ns.node.Barber({id = 29142})
 
 map.nodes[0] = Banker()
 
