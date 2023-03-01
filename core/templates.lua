@@ -253,7 +253,7 @@ function WorldMapOptionsButtonMixin:InitializeDropDown(level)
                 end
             end
         elseif L_UIDROPDOWNMENU_MENU_VALUE == 'rewards' then
-            for i, type in ipairs({
+            for _, type in ipairs({
                 'mount', 'pet', 'toy', 'transmog', 'all_transmog'
             }) do
                 LibDD:UIDropDownMenu_AddButton({
@@ -266,35 +266,24 @@ function WorldMapOptionsButtonMixin:InitializeDropDown(level)
                     end
                 }, 2)
             end
-        else
-            if L_UIDROPDOWNMENU_MENU_VALUE.name == 'profession' then
-                LibDD:UIDropDownMenu_AddButton({
-                    text = 'show only known profesions',
-                    isNotRadio = true,
-                    keepShownOnClick = true,
-                    checked = ns:GetOpt('show_known_prof'),
-                    func = function(button, option)
-                        ns:SetOpt('show_known_prof', button.checked)
-                    end
-                }, 2)
-                LibDD:UIDropDownMenu_AddButton({
-                    text = 'show profession icon',
-                    isNotRadio = true,
-                    keepShownOnClick = true,
-                    checked = ns:GetOpt('show_prof_icon'),
-                    func = function(button, option)
-                        ns:SetOpt('show_prof_icon', button.checked)
-                    end
-                }, 2)
-            end
-            -- Get correct map ID to query/set options for
-            local group = L_UIDROPDOWNMENU_MENU_VALUE
-
-            self.GroupDesc.Text:SetText(ns.RenderLinks(group.desc))
-            LibDD:UIDropDownMenu_AddButton({customFrame = self.GroupDesc}, 2)
+        elseif L_UIDROPDOWNMENU_MENU_VALUE.name == 'profession' then
             LibDD:UIDropDownMenu_AddButton({
-                notClickable = true,
-                notCheckable = true
+                text = 'show only known profesions',
+                isNotRadio = true,
+                keepShownOnClick = true,
+                checked = ns:GetOpt('show_known_prof'),
+                func = function(button, option)
+                    ns:SetOpt('show_known_prof', button.checked)
+                end
+            }, 2)
+            LibDD:UIDropDownMenu_AddButton({
+                text = 'show profession icon',
+                isNotRadio = true,
+                keepShownOnClick = true,
+                checked = ns:GetOpt('show_prof_icon'),
+                func = function(button, option)
+                    ns:SetOpt('show_prof_icon', button.checked)
+                end
             }, 2)
 
             Custom_UIDropDownMenu_AddSlider({
@@ -302,24 +291,25 @@ function WorldMapOptionsButtonMixin:InitializeDropDown(level)
                 min = 0,
                 max = 1,
                 step = 0.01,
-                value = group:GetAlpha(map.id),
+                value = ns.groups.PROFESSION:GetAlpha(map.id),
                 frame = self.AlphaOption,
                 percentage = true,
-                func = function(v) group:SetAlpha(v, map.id) end
+                func = function(v)
+                    ns.groups.PROFESSION:SetAlpha(v, map.id)
+                end
             }, 2)
-
             Custom_UIDropDownMenu_AddSlider({
                 text = L['options_scale'],
                 min = 0.3,
                 max = 3,
                 step = 0.05,
-                value = group:GetScale(map.id),
+                value = ns.groups.PROFESSION:GetScale(map.id),
                 frame = self.ScaleOption,
-                func = function(v) group:SetScale(v, map.id) end
+                func = function(v)
+                    ns.groups.PROFESSION:SetScale(v, map.id)
+                end
             }, 2)
-            --------------------------------------------------------------------------------
-
-            -------------------------------------------------------------------------------
+        else
             -- add opacity/scale menu for non-achievements
             self:AddGroupOptions(L_UIDROPDOWNMENU_MENU_VALUE, 2)
         end
