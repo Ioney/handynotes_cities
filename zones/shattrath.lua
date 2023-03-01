@@ -15,7 +15,7 @@ local Innkeeper = ns.node.Innkeeper
 local Banker = ns.node.Banker
 local Auctioneer = ns.node.Auctioneer
 local Vendor = ns.node.Vendor
-local Profession = ns.node.Profession
+local Trainer = ns.node.Trainer
 
 local Path = ns.poi.Path
 -------------------------------------------------------------------------------
@@ -466,56 +466,56 @@ map.nodes[61986884] = Vendor({
 
 -- PROFESSIONS
 
-map.nodes[36012073] = ns.node.Jewelcrafting({id = 19063, sublabel = L['aldor']})
-map.nodes[38243026] = ns.node.Herbalism({id = 33687, sublabel = L['aldor']})
-map.nodes[38733019] = ns.node.Alchemy({id = 33674, sublabel = L['aldor']})
-map.nodes[37553138] = ns.node.Blacksmithing({id = 33675, sublabel = L['aldor']})
-map.nodes[37753181] = ns.node.Engineering({id = 33677, sublabel = L['aldor']})
-map.nodes[37522767] = ns.node
-                          .Leatherworking({id = 33681, sublabel = L['aldor']})
-map.nodes[37692698] = ns.node.Tailoring({id = 33684, sublabel = L['aldor']})
-map.nodes[37202701] = ns.node.Skinning({id = 33683, sublabel = L['aldor']})
+map.nodes[36012073] = Trainer.Jewelcrafting({id = 19063, sublabel = L['aldor']})
+map.nodes[38243026] = Trainer.Herbalism({id = 33687, sublabel = L['aldor']})
+map.nodes[38733019] = Trainer.Alchemy({id = 33674, sublabel = L['aldor']})
+map.nodes[37553138] = Trainer.Blacksmithing({id = 33675, sublabel = L['aldor']})
+map.nodes[37753181] = Trainer.Engineering({id = 33677, sublabel = L['aldor']})
+map.nodes[37522767] =
+    Trainer.Leatherworking({id = 33681, sublabel = L['aldor']})
+map.nodes[37692698] = Trainer.Tailoring({id = 33684, sublabel = L['aldor']})
+map.nodes[37202701] = Trainer.Skinning({id = 33683, sublabel = L['aldor']})
 
-map.nodes[38297097] = ns.node.Alchemy({id = 33630, sublabel = L['scryers']})
-map.nodes[38457116] = ns.node.Herbalism({id = 33639, sublabel = L['scryers']})
-map.nodes[44079069] = ns.node.Alchemy({id = 33608, sublabel = L['scryers']})
-map.nodes[43879059] = ns.node.Blacksmithing({
+map.nodes[38297097] = Trainer.Alchemy({id = 33630, sublabel = L['scryers']})
+map.nodes[38457116] = Trainer.Herbalism({id = 33639, sublabel = L['scryers']})
+map.nodes[44079069] = Trainer.Alchemy({id = 33608, sublabel = L['scryers']})
+map.nodes[43879059] = Trainer.Blacksmithing({
     id = 33609,
     sublabel = L['scryers']
 })
-map.nodes[43689049] = ns.node.Enchanting({id = 33610, sublabel = L['scryers']})
-map.nodes[43509039] = ns.node.Engineering({id = 33611, sublabel = L['scryers']})
-map.nodes[43449056] = ns.node.Inscription({id = 33615, sublabel = L['scryers']})
-map.nodes[43649068] = ns.node.Jewelcrafting({
+map.nodes[43689049] = Trainer.Enchanting({id = 33610, sublabel = L['scryers']})
+map.nodes[43509039] = Trainer.Engineering({id = 33611, sublabel = L['scryers']})
+map.nodes[43449056] = Trainer.Inscription({id = 33615, sublabel = L['scryers']})
+map.nodes[43649068] = Trainer.Jewelcrafting({
     id = 33614,
     sublabel = L['scryers']
 })
-map.nodes[43849077] = ns.node.Leatherworking({
+map.nodes[43849077] = Trainer.Leatherworking({
     id = 33612,
     sublabel = L['scryers']
 })
-map.nodes[44029092] = ns.node.Tailoring({id = 33613, sublabel = L['scryers']})
-map.nodes[43799119] = ns.node.Herbalism({id = 33616, sublabel = L['scryers']})
-map.nodes[43599110] = ns.node.Mining({id = 33617, sublabel = L['scryers']})
-map.nodes[43409096] = ns.node.Skinning({id = 33618, sublabel = L['scryers']})
-map.nodes[43359111] = ns.node.Cooking({id = 33619, sublabel = L['scryers']})
-map.nodes[43539126] = ns.node.Fishing({id = 33623, sublabel = L['scryers']})
-map.nodes[43739139] = ns.node.FirstAid({id = 33621, sublabel = L['scryers']})
-map.nodes[43269227] = ns.node.Enchanting({id = 19251, sublabel = L['scryers']})
-map.nodes[43459240] = ns.node.Enchanting({id = 19525, sublabel = L['scryers']})
-map.nodes[55907432] = ns.node.Inscription({id = 33638, sublabel = L['scryers']})
-map.nodes[55557467] = ns.node.Enchanting({id = 33633, sublabel = L['scryers']})
-map.nodes[58297511] = ns.node.Jewelcrafting({
+map.nodes[44029092] = Trainer.Tailoring({id = 33613, sublabel = L['scryers']})
+map.nodes[43799119] = Trainer.Herbalism({id = 33616, sublabel = L['scryers']})
+map.nodes[43599110] = Trainer.Mining({id = 33617, sublabel = L['scryers']})
+map.nodes[43409096] = Trainer.Skinning({id = 33618, sublabel = L['scryers']})
+map.nodes[43359111] = Trainer.Cooking({id = 33619, sublabel = L['scryers']})
+map.nodes[43539126] = Trainer.Fishing({id = 33623, sublabel = L['scryers']})
+-- map.nodes[43739139] = Trainer.FirstAid({id = 33621, sublabel = L['scryers']})
+map.nodes[43269227] = Trainer.Enchanting({id = 19251, sublabel = L['scryers']})
+map.nodes[43459240] = Trainer.Enchanting({id = 19525, sublabel = L['scryers']})
+map.nodes[55907432] = Trainer.Inscription({id = 33638, sublabel = L['scryers']})
+map.nodes[55557467] = Trainer.Enchanting({id = 33633, sublabel = L['scryers']})
+map.nodes[58297511] = Trainer.Jewelcrafting({
     id = 33637,
     sublabel = L['scryers']
 })
-map.nodes[58787511] = ns.node.Mining({id = 33640, sublabel = L['scryers']})
+map.nodes[58787511] = Trainer.Mining({id = 33640, sublabel = L['scryers']})
 
-map.nodes[62667031] = ns.node.Archaeology({id = 47575})
-map.nodes[62656814] = ns.node.Cooking({id = 19185})
-map.nodes[67256739] = ns.node.Leatherworking({id = 19187})
-map.nodes[69284292] = ns.node.Blacksmithing({id = 20124})
-map.nodes[69814200] = ns.node.Blacksmithing({id = 20125})
-map.nodes[76813426] = ns.node.Cooking({id = 19186})
-map.nodes[45622148] = ns.node.Alchemy({id = 19052})
+map.nodes[62667031] = Trainer.Archaeology({id = 47575})
+map.nodes[62656814] = Trainer.Cooking({id = 19185})
+map.nodes[67256739] = Trainer.Leatherworking({id = 19187})
+map.nodes[69284292] = Trainer.Blacksmithing({id = 20124})
+map.nodes[69814200] = Trainer.Blacksmithing({id = 20125})
+map.nodes[76813426] = Trainer.Cooking({id = 19186})
+map.nodes[45622148] = Trainer.Alchemy({id = 19052})
 

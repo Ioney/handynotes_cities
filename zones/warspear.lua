@@ -16,7 +16,7 @@ local Innkeeper = ns.node.Innkeeper
 local Banker = ns.node.Banker
 local Auctioneer = ns.node.Auctioneer
 local Vendor = ns.node.Vendor
-local Profession = ns.node.Profession
+local Trainer = ns.node.Trainer
 
 local Path = ns.poi.Path
 -------------------------------------------------------------------------------
@@ -29,7 +29,7 @@ map.nodes[68483971] = Mailbox()
 map.nodes[77815094] = Mailbox()
 map.nodes[64562519] = Mailbox()
 
-map.nodes[44183389] = ns.node.Flightpoint({id = 86049})
+map.nodes[44183389] = ns.node.Flightmaster({id = 86049})
 
 map.nodes[44964319] = Innkeeper({id = 86307})
 
@@ -230,21 +230,21 @@ map.nodes[54062532] = Auctioneer({id = 86635})
 map.nodes[54912471] = Auctioneer({id = 88128})
 map.nodes[55332598] = Auctioneer({id = 88130})
 
-map.nodes[45654479] = ns.node.Cooking({id = 86029})
-map.nodes[49482787] = ns.node.Leatherworking({id = 86032})
-map.nodes[48683131] = ns.node.Skinning({id = 86028})
-map.nodes[60942636] = ns.node.Alchemy({id = 86009})
-map.nodes[62663063] = ns.node.Herbalism({id = 86006})
-map.nodes[71664025] = ns.node.Engineering({id = 86012})
-map.nodes[78755292] = ns.node.Enchanting({id = 86027})
-map.nodes[77104747] = ns.node.Inscription({id = 86015})
-map.nodes[74063708] = ns.node.Blacksmithing({id = 86048})
-map.nodes[78803762] = ns.node.Mining({
+map.nodes[45654479] = Trainer.Cooking({id = 86029})
+map.nodes[49482787] = Trainer.Leatherworking({id = 86032})
+map.nodes[48683131] = Trainer.Skinning({id = 86028})
+map.nodes[60942636] = Trainer.Alchemy({id = 86009})
+map.nodes[62663063] = Trainer.Herbalism({id = 86006})
+map.nodes[71664025] = Trainer.Engineering({id = 86012})
+map.nodes[78755292] = Trainer.Enchanting({id = 86027})
+map.nodes[77104747] = Trainer.Inscription({id = 86015})
+map.nodes[74063708] = Trainer.Blacksmithing({id = 86048})
+map.nodes[78803762] = Trainer.Mining({
     id = 86014,
     pois = {Path({79363524, 78803762, 77113792})}
 })
-map.nodes[69101655] = ns.node.Fishing({id = 86628})
-map.nodes[65405124] = ns.node.FirstAid({id = 86034})
-map.nodes[60243989] = ns.node.Jewelcrafting({id = 86010})
-map.nodes[59434282] = ns.node.Tailoring({id = 86004})
-map.nodes[73613116] = ns.node.Archaeology({id = 86033})
+map.nodes[69101655] = Trainer.Fishing({id = 86628})
+-- map.nodes[65405124] = Trainer.FirstAid({id = 86034})
+map.nodes[60243989] = Trainer.Jewelcrafting({id = 86010})
+map.nodes[59434282] = Trainer.Tailoring({id = 86004})
+map.nodes[73613116] = Trainer.Archaeology({id = 86033})

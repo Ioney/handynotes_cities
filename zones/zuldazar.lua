@@ -15,7 +15,7 @@ local Innkeeper = ns.node.Innkeeper
 local Banker = ns.node.Banker
 local Auctioneer = ns.node.Auctioneer
 local Vendor = ns.node.Vendor
-local Profession = ns.node.Profession
+local Trainer = ns.node.Trainer
 
 local Path = ns.poi.Path
 local POI = ns.poi.POI
@@ -40,7 +40,7 @@ map.nodes[34751159] = Innkeeper({id = 126330})
 map.nodes[52428494] = Innkeeper({id = 120840})
 map.nodes[57468537] = Innkeeper({id = 129556})
 
-map.nodes[52721713] = ns.node.Barbershop({id = 132364})
+map.nodes[52721713] = ns.node.Barber({id = 132364})
 
 map.nodes[45763632] = ns.node.Stablemaster({id = 122696})
 
@@ -117,53 +117,45 @@ map.nodes[44479445] = Vendor({
 
 map.nodes[47729166] = Vendor({
     id = 122463,
-    rewards = {
-        Mount({item = 63044, id = 398}),
-        Mount({item = 63045, id = 399})
-    },
+    rewards = {Mount({item = 63044, id = 398}), Mount({item = 63045, id = 399})}
 })
 
 map.nodes[45498646] = Vendor({
     id = 148080,
-    note=L['olly'],
+    note = L['olly'],
     rewards = {
-        Pet({item = 163489, id = 2403}),
-        Pet({item = 163492, id = 2406}),
-        Pet({item = 163493, id = 2407}),
-        Pet({item = 163494, id = 2408}),
-        Pet({item = 163495, id = 2409}),
-        Pet({item = 163496, id = 2410}),
-    },
+        Pet({item = 163489, id = 2403}), Pet({item = 163492, id = 2406}),
+        Pet({item = 163493, id = 2407}), Pet({item = 163494, id = 2408}),
+        Pet({item = 163495, id = 2409}), Pet({item = 163496, id = 2410})
+    }
 })
 
-
-
-great_seal.nodes[32003100] = ns.node.Archaeology({id = 122701})
-great_seal_upstairs.nodes[28564992] = ns.node.Cooking({
+great_seal.nodes[32003100] = Trainer.Archaeology({id = 122701})
+great_seal_upstairs.nodes[28564992] = Trainer.Cooking({
     id = 141549,
     parent = 1165
 })
-great_seal_upstairs.nodes[70443275] = ns.node.Inscription({
+great_seal_upstairs.nodes[70443275] = Trainer.Inscription({
     id = 132264,
     parent = 1165
 })
-map.nodes[50522337] = ns.node.Fishing({id = 122705})
-map.nodes[44483390] = ns.node.Tailoring({id = 122700})
-map.nodes[44073463] = ns.node.Leatherworking({id = 122698})
-map.nodes[43753466] = ns.node.Skinning({id = 122699})
-map.nodes[42113561] = ns.node.Herbalism({id = 122704})
-map.nodes[42233796] = ns.node.Alchemy({id = 122703})
-map.nodes[42323972] = ns.node.Inscription({id = 130901})
-map.nodes[43653829] = ns.node.Blacksmithing({id = 127112})
-map.nodes[44113898] = ns.node.Mining({id = 122694})
-map.nodes[45134058] = ns.node.Engineering({id = 131840})
-map.nodes[39201745] = ns.node.Inscription({id = 128150})
-map.nodes[38081416] = ns.node.Cooking({id = 131741})
-map.nodes[47043794] = ns.node.Jewelcrafting({
+map.nodes[50522337] = Trainer.Fishing({id = 122705})
+map.nodes[44483390] = Trainer.Tailoring({id = 122700})
+map.nodes[44073463] = Trainer.Leatherworking({id = 122698})
+map.nodes[43753466] = Trainer.Skinning({id = 122699})
+map.nodes[42113561] = Trainer.Herbalism({id = 122704})
+map.nodes[42233796] = Trainer.Alchemy({id = 122703})
+map.nodes[42323972] = Trainer.Inscription({id = 130901})
+map.nodes[43653829] = Trainer.Blacksmithing({id = 127112})
+map.nodes[44113898] = Trainer.Mining({id = 122694})
+map.nodes[45134058] = Trainer.Engineering({id = 131840})
+map.nodes[39201745] = Trainer.Inscription({id = 128150})
+map.nodes[38081416] = Trainer.Cooking({id = 131741})
+map.nodes[47043794] = Trainer.Jewelcrafting({
     id = 122695,
     pois = {POI({44353697})}
 })
-map.nodes[47083569] = ns.node
-                          .Enchanting({id = 122702, pois = {POI({44353697})}})
-map.nodes[36551788] = ns.node.Tailoring({id = 132265})
-map.nodes[52469044] = ns.node.Cooking({id = 141906})
+map.nodes[47083569] =
+    Trainer.Enchanting({id = 122702, pois = {POI({44353697})}})
+map.nodes[36551788] = Trainer.Tailoring({id = 132265})
+map.nodes[52469044] = Trainer.Cooking({id = 141906})

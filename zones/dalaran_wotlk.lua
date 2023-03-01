@@ -15,7 +15,7 @@ local Innkeeper = ns.node.Innkeeper
 local Banker = ns.node.Banker
 local Auctioneer = ns.node.Auctioneer
 local Vendor = ns.node.Vendor
-local Profession = ns.node.Profession
+local Trainer = ns.node.Trainer
 
 local Path = ns.poi.Path
 -------------------------------------------------------------------------------
@@ -53,26 +53,26 @@ map.nodes[38522511] = Auctioneer({id = 35607})
 map.nodes[65522347] = Auctioneer({id = 35607})
 map.nodes[37075479] = Auctioneer({id = 35594})
 
-map.nodes[52283155] = ns.node.Barbershop({id = 28708})
+map.nodes[52283155] = ns.node.Barber({id = 28708})
 
 -- PROFESSIONS
 
-map.nodes[42683205] = ns.node.Alchemy({id = 28703}) -- Alchemy
-map.nodes[48363820] = ns.node.Profession({id = 47579}) -- Archeology
-map.nodes[45312768] = ns.node.Blacksmithing({id = 28694}) -- Blacksmithing
-map.nodes[69983899] = ns.node.Cooking({id = 29631}) -- Cooking
-map.nodes[40256610] = ns.node.Cooking({id = 28705}) -- Cooking
-map.nodes[39053981] = ns.node.Enchanting({id = 28693}) -- Enchanting
-map.nodes[38492584] = ns.node.Engineering({id = 28697}) -- Engineering
-map.nodes[53066495] = ns.node.Fishing({id = 28742}) -- Fishing
-map.nodes[42923410] = ns.node.Herbalism({id = 28704}) -- Herbalism
-map.nodes[41603719] = ns.node.Inscription({id = 28702}) -- Inscription
-map.nodes[40683534] = ns.node.Jewelcrafting({id = 28701}) -- Jewelcrafting
-map.nodes[34692875] = ns.node.Leatherworking({id = 28700}) -- Leatherworking
-map.nodes[41472567] = ns.node.Mining({id = 28698}) -- Mining
-map.nodes[34812806] = ns.node.Skinning({id = 28696}) -- Skinning
-map.nodes[36153355] = ns.node.Tailoring({id = 28699}) -- Tailoring
-map.nodes[36573733] = ns.node.Profession({prof = 0, id = 0}) -- First Aid
+map.nodes[42683205] = Trainer.Alchemy({id = 28703})
+map.nodes[48363820] = Trainer.Archaeology({id = 47579})
+map.nodes[45312768] = Trainer.Blacksmithing({id = 28694})
+map.nodes[69983899] = Trainer.Cooking({id = 29631})
+map.nodes[40256610] = Trainer.Cooking({id = 28705})
+map.nodes[39053981] = Trainer.Enchanting({id = 28693})
+map.nodes[38492584] = Trainer.Engineering({id = 28697})
+map.nodes[53066495] = Trainer.Fishing({id = 28742})
+map.nodes[42923410] = Trainer.Herbalism({id = 28704})
+map.nodes[41603719] = Trainer.Inscription({id = 28702})
+map.nodes[40683534] = Trainer.Jewelcrafting({id = 28701})
+map.nodes[34692875] = Trainer.Leatherworking({id = 28700})
+map.nodes[41472567] = Trainer.Mining({id = 28698})
+map.nodes[34812806] = Trainer.Skinning({id = 28696})
+map.nodes[36153355] = Trainer.Tailoring({id = 28699})
+-- map.nodes[36573733] = Trainer.FirstAid({prof = 0, id = 0})
 
 map.nodes[58124207] = Vendor({
     id = 32216,
@@ -106,9 +106,7 @@ map.nodes[58833898] = Vendor({
     id = 28951,
     rewards = {
         -- Toy({item = 44820}),
-        Pet({item = 46398, id = 224}),
-        Pet({item = 44822, id = 74}),
-        Pet({item = 48120, id = 236}),
-        Pet({item = 129826, id = 1727})
+        Pet({item = 46398, id = 224}), Pet({item = 44822, id = 74}),
+        Pet({item = 48120, id = 236}), Pet({item = 129826, id = 1727})
     }
 })

@@ -15,7 +15,7 @@ local Innkeeper = ns.node.Innkeeper
 local Banker = ns.node.Banker
 local Auctioneer = ns.node.Auctioneer
 local Vendor = ns.node.Vendor
-local Profession = ns.node.Profession
+local Trainer = ns.node.Trainer
 
 local Path = ns.poi.Path
 -------------------------------------------------------------------------------
@@ -33,18 +33,18 @@ map.nodes[47275862] = Banker()
 map.nodes[38895021] = Auctioneer({id = 8722})
 map.nodes[40405177] = Auctioneer({id = 8674})
 
-map.nodes[34405784] = Profession({prof = 186, id = 3001}) -- Mining
-map.nodes[34815396] = Profession({prof = 755, id = 52657}) -- Jewelcrafting
-map.nodes[39405509] = Profession({prof = 164, id = 2998}) -- Blacksmithing
-map.nodes[36085970] = Profession({prof = 202, id = 52651}) -- Engineering
-map.nodes[44474534] = Profession({prof = 197, id = 3004}) -- Tailoring
-map.nodes[75032807] = Profession({prof = 794, id = 47572}) -- Archeology
-map.nodes[56154645] = Profession({prof = 356, id = 3028}) -- Fishing
-map.nodes[29642118] = Profession({prof = 0, id = 2798}) -- First Aid
-map.nodes[41534255] = Profession({prof = 165, id = 3007}) -- Leatherworking
-map.nodes[44474309] = Profession({prof = 393, id = 7089}) -- Skinning
-map.nodes[45293847] = Profession({prof = 333, id = 3011}) -- Enchanting
-map.nodes[28722085] = Profession({prof = 773, id = 30709, note = L['in_cave']}) -- Inscription
-map.nodes[46694030] = Profession({prof = 182, id = 3013}) -- Herbalism
-map.nodes[50745309] = Profession({prof = 185, id = 3026}) -- Cooking
-map.nodes[46633318] = Profession({prof = 171, id = 3009}) -- Alchemy
+map.nodes[34405784] = Trainer.Mining({id = 3001})
+map.nodes[34815396] = Trainer.Jewelcrafting({id = 52657})
+map.nodes[39405509] = Trainer.Blacksmithing({id = 2998})
+map.nodes[36085970] = Trainer.Engineering({id = 52651})
+map.nodes[44474534] = Trainer.Tailoring({id = 3004})
+map.nodes[75032807] = Trainer.Archeology({id = 47572})
+map.nodes[56154645] = Trainer.Fishing({id = 3028})
+-- map.nodes[29642118] = Trainer.FirstAid({id = 2798})
+map.nodes[41534255] = Trainer.Leatherworking({id = 3007})
+map.nodes[44474309] = Trainer.Skinning({id = 7089})
+map.nodes[45293847] = Trainer.Enchanting({id = 3011})
+map.nodes[28722085] = Trainer.Inscription({id = 30709, note = L['in_cave']})
+map.nodes[46694030] = Trainer.Herbalism({id = 3013})
+map.nodes[50745309] = Trainer.Cooking({id = 3026})
+map.nodes[46633318] = Trainer.Alchemy({id = 3009})

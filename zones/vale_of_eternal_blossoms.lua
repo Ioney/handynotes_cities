@@ -9,6 +9,7 @@ local Innkeeper = ns.node.Innkeeper
 local Banker = ns.node.Banker
 local Auctioneer = ns.node.Auctioneer
 local Vendor = ns.node.Vendor
+local Trainer = ns.node.Trainer
 
 local Path = ns.poi.Path
 -------------------------------------------------------------------------------
@@ -530,6 +531,6 @@ hrd_2.nodes[44448127] = Vendor({
     faction = 'Horde'
 })
 
-hrd.nodes[25804390] = ns.node.Blacksmithing({id = 16669, faction = 'Horde'})
-hrd.nodes[61004185] = ns.node.Engineering({id = 64924, faction = 'Horde'})
-hrd.nodes[29327555] = ns.node.FirstAid({id = 65862, faction = 'Horde'})
+hrd.nodes[25804390] = Trainer.Blacksmithing({id = 16669, faction = 'Horde'})
+hrd.nodes[61004185] = Trainer.Engineering({id = 64924, faction = 'Horde'})
+-- hrd.nodes[29327555] = Trainer.FirstAid({id = 65862, faction = 'Horde'})

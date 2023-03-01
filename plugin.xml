@@ -1,20 +1,21 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
   <Script file="common.lua"/>
-  <!-- <Script file="zones\dalaran_legion.lua"/> -->
-  <!-- <Script file="zones\dalaran_wotlk.lua"/> -->
-  <!-- <Script file="zones\brawlers_guild.lua"/> -->
-  <!-- <Script file="zones\shattrath.lua"/> -->
-  <!-- <Script file="zones\vale_of_eternal_blossoms.lua"/> -->
-  <!-- <Script file="zones\warspear.lua"/> -->
-  <!-- <Script file="zones\zuldazar.lua"/> -->
+
+  <Script file="zones\orgrimmar.lua"/>
+  <Script file="zones\thunderbluff.lua"/>
+  <Script file="zones\undercity.lua"/>
+  <Script file="zones\silvermoon.lua"/>
+
+  <Script file="zones\stormwind.lua"/>
+  <Script file="zones\ironforge.lua"/>
+  <Script file="zones\darnassus.lua"/>
+
+  <Script file="zones\dalaran_legion.lua"/>
+  <Script file="zones\dalaran_wotlk.lua"/>
+  <Script file="zones\brawlers_guild.lua"/>
+  <Script file="zones\shattrath.lua"/>
+  <Script file="zones\vale_of_eternal_blossoms.lua"/>
+  <Script file="zones\warspear.lua"/>
+  <Script file="zones\zuldazar.lua"/>
   <Script file="zones\valdrakken.lua"/>
-
-  <!-- <Script file="zones\orgrimmar.lua"/> -->
-  <!-- <Script file="zones\thunderbluff.lua"/> -->
-  <!-- <Script file="zones\undercity.lua"/> -->
-  <!-- <Script file="zones\silvermoon.lua"/> -->
-
-  <!-- <Script file="zones\stormwind.lua"/> -->
-  <!-- <Script file="zones\ironforge.lua"/> -->
-  <!-- <Script file="zones\darnassus.lua"/> -->
 </Ui>
