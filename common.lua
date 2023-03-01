@@ -76,7 +76,7 @@ ns.groups.AUCTIONEER = Group('auctioneer', 'auctioneer',
                              {defaults = ns.GROUP_HIDDEN})
 ns.groups.BARBERSHOP = Group('barbershop', 'barbershop',
                              {defaults = ns.GROUP_HIDDEN})
-ns.groups.FLIGHTPOINT = Group('flightpoint', 'flight_point_y')
+ns.groups.FLIGHTMASTER = Group('flightmaster', 'flight_point_y')
 ns.groups.PORTALTRAINER = Group('portaltrainer', 237508, {
     IsEnabled = function(self) -- Only display group for skinning players
         local _, _, class = UnitClass("player")
@@ -151,21 +151,14 @@ ns.Profession = {
     Fishing = {id = 356, icon = 'prof_fishing'}
 }
 
-local function hasProf(profession)
-    for _, P in GetProfessions() do
-        local _, _, _, _, _, _, p = GetProfessionInfo(P)
-        if profession.id == p then return true end
-    end
-    return false
-end
-
 local Profession = Class('Profession', ns.node.NPC, {
     group = ns.groups.PROFESSION,
     IsEnabled = function(self)
-        if ns:GetOpt("show_known_prof") and not hasProf(self.profession) then
+        if ns:GetOpt("show_known_prof") and
+            not ns.PlayerHasProfession(self.profession.id) then
             return false
         end
-        return ns.node.Rare.IsEnabled(self)
+        return true
     end
 })
 
@@ -233,7 +226,7 @@ function Profession.getters:icon()
         self.glow = ns.poi.Glow({icon = ns.GetGlowPath('profession')})
         return 'profession'
     end
-    self.glow = ns.poi.Glow({icon = ns.GetGlowPath(prof)})
+    self.glow = ns.poi.Glow({icon = ns.GetGlowPath(self.profession.icon)})
     return self.profession.icon
 end
 
@@ -306,11 +299,11 @@ ns.node.Voidstorage = Class('Voidstorage', ns.node.NPC, {
 })
 
 -------------------------------------------------------------------------------
---------------------------------- Flightpoint ---------------------------------
+--------------------------------- Flightmaster ---------------------------------
 -------------------------------------------------------------------------------
 
-ns.node.Flightpoint = Class('Flightpoint', ns.node.Node, {
-    group = ns.groups.FLIGHTPOINT,
+ns.node.Flightmaster = Class('Flightmaster', ns.node.Node, {
+    group = ns.groups.FLIGHTMASTER,
     sublabel = _G.MINIMAP_TRACKING_FLIGHTMASTER,
     icon = 'flight_point_y'
 })
@@ -335,14 +328,26 @@ ns.node.Vendor = Vendor
 
 ns.icons.rostrum = {Icon('rostrum'), Glow('rostrum')}
 
-ns.groups.ROSTRUM = Group('ROSTRUM', 'rostrum')
-ns.groups.WORKORDERS = Group('WORKORDERS', 'scroll')
+ns.groups.ROSTRUM = Group('rostrum', 'rostrum')
+ns.groups.WORKORDERS = Group('workorders', 'scroll')
 
 ns.node.Rostrum = Class('Rostrum', ns.node.Node, {
     group = ns.groups.ROSTRUM,
     label = L['rostrum_of_transformation'],
     icon = 'rostrum'
 })
+
+local DragonRidingTrainer = Class('DragonRidingTrainer', ns.node.NPC, {
+    sublabel = L['dragon_riding_trainer'],
+    icon = 4640486
+})
+
+function DragonRidingTrainer.getters:note()
+    return C_CurrencyInfo.GetCurrencyInfo(2133) and L['dr_passanger_active'] or
+               L['dr_passanger_inactive']
+end
+
+ns.node.DragonRidingTrainer = DragonRidingTrainer
 
 ns.node.WorkOrders = Class('WorkOrders', ns.node.NPC, {
     group = ns.groups.WORKORDERS,

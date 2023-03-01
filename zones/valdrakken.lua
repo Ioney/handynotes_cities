@@ -27,11 +27,12 @@ map.nodes[45575905] = Mailbox()
 map.nodes[35465967] = Mailbox()
 map.nodes[37664953] = Mailbox()
 
-map.nodes[44026795] = ns.node.Flightpoint({id = 193321})
+map.nodes[44026795] = ns.node.Flightmaster({id = 193321})
 map.nodes[30334981] = ns.node.Barber({id = 197111})
 
 map.nodes[47464616] = ns.node.Innkeeper({id = 185562})
 map.nodes[25045063] = ns.node.Rostrum()
+map.nodes[27264735] = ns.node.DragonRidingTrainer({id = 193364})
 
 map.nodes[46687893] = ns.node.Stablemaster({id = 185561})
 map.nodes[74465607] = ns.node.Transmogrifier({id = 185570})
