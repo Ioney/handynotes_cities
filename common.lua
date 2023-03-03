@@ -29,6 +29,7 @@ ns.icons.stablemaster = {Icon('stablemaster'), Glow('stablemaster')}
 ns.icons.transmogrifier = {Icon('transmogrifier'), Glow('transmogrifier')}
 ns.icons.voidstorage = {Icon('voidstorage'), Glow('voidstorage')}
 ns.icons.vendor = {Icon('vendor'), Glow('vendor')}
+ns.icons.vendor_repair = {Icon('vendor_repair'), Glow('vendor_repair')}
 
 ns.icons.prof_alchemy = {Icon('profession_alchemy'), Glow('profession_glow')}
 ns.icons.prof_blacksmithing = {
