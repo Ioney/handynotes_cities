@@ -560,19 +560,62 @@ function Transmog:GetStatus()
 end
 
 -------------------------------------------------------------------------------
+------------------------------------ RECIPE -----------------------------------
+-------------------------------------------------------------------------------
+
+local Recipe = Class('Recipe', Item, {
+    display_option = 'show_recipe_rewards',
+    type = L['recipe']
+})
+
+function Recipe:Initialize(attrs)
+    Item.Initialize(self, attrs)
+
+    if not self.profession then
+        error('Recipe() reward requires a profession id to be set')
+    end
+end
+
+-- Tooltip Documentation:
+-- https://wowpedia.fandom.com/wiki/Patch_10.0.2/API_changes
+function Recipe:IsObtained()
+    local info = C_TooltipInfo.GetItemByID(self.item)
+    if info then
+        TooltipUtil.SurfaceArgs(info)
+        for _, line in ipairs(info.lines) do
+            TooltipUtil.SurfaceArgs(line)
+            if line.leftText and line.leftText == _G.ITEM_SPELL_KNOWN then
+                return true
+            end
+        end
+    end
+    return false
+end
+
+function Recipe:GetStatus()
+    return self:IsObtained() and Green(L['known']) or Red(L['missing'])
+end
+
+function Recipe:IsEnabled()
+    if not Item.IsEnabled(self) then return false end
+    return ns.PlayerHasProfession(self.profession)
+end
+
+-------------------------------------------------------------------------------
 
 ns.reward = {
-    Reward = Reward,
-    Section = Section,
-    Spacer = Spacer,
     Achievement = Achievement,
     Currency = Currency,
     Follower = Follower,
-    Item = Item,
     Heirloom = Heirloom,
+    Item = Item,
     Mount = Mount,
     Pet = Pet,
     Quest = Quest,
+    Recipe = Recipe,
+    Reward = Reward,
+    Section = Section,
+    Spacer = Spacer,
     Spell = Spell,
     Title = Title,
     Toy = Toy,

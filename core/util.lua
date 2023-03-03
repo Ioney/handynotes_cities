@@ -81,7 +81,7 @@ local function RenderLinks(str, nameOnly)
         id = tonumber(id)
         if type == 'npc' then
             local name = NameResolver:Resolve(
-                ('unit:Creature-0-0-0-0-%d'):format(id))
+                             ('unit:Creature-0-0-0-0-%d'):format(id))
             name = name .. (suffix or '')
             if nameOnly then return name end
             return ns.color.NPC(name)
@@ -127,7 +127,7 @@ local function RenderLinks(str, nameOnly)
             if name and icon then
                 if nameOnly then return name end
                 local spell = ns.color.Spell(
-                    '|Hspell:' .. id .. '|h[' .. name .. ']|h')
+                                  '|Hspell:' .. id .. '|h[' .. name .. ']|h')
                 return '|T' .. icon .. ':0:0:1:-1|t ' .. spell
             end
         end
@@ -269,10 +269,58 @@ local function HEXtoRGBA(color)
     end
 
     local a, r, g, b = string.sub(c, 1, 2), string.sub(c, 3, 4),
-        string.sub(c, 5, 6), string.sub(c, 7, 8)
+                       string.sub(c, 5, 6), string.sub(c, 7, 8)
     return tonumber(r, 16) / 255, tonumber(g, 16) / 255, tonumber(b, 16) / 255,
-        tonumber(a, 16) / 255
+           tonumber(a, 16) / 255
 end
+
+-------------------------------------------------------------------------------
+
+local PROFESSION = {
+    ALCHEMY = {id = 171, icon = 4620669, L = _G.CHARACTER_PROFESSION_ALCHEMY},
+    BLACKSMITHING = {
+        id = 164,
+        icon = 4620670,
+        L = _G.CHARACTER_PROFESSION_BLACKSMITHING
+    },
+    ENCHANTING = {
+        id = 333,
+        icon = 4620672,
+        L = _G.CHARACTER_PROFESSION_ENCHANTING
+    },
+    ENGINEERING = {
+        id = 202,
+        icon = 4620673,
+        L = _G.CHARACTER_PROFESSION_ENGINEERING
+    },
+    HERBALISM = {
+        id = 182,
+        icon = 4620675,
+        L = _G.CHARACTER_PROFESSION_HERBALISM
+    },
+    INSCRIPTION = {
+        id = 773,
+        icon = 4620676,
+        L = _G.CHARACTER_PROFESSION_INSCRIPTION
+    },
+    JEWELCRAFTING = {
+        id = 755,
+        icon = 4620677,
+        L = _G.CHARACTER_PROFESSION_JEWELCRAFTING
+    },
+    LEATHERWORKING = {
+        id = 165,
+        icon = 4620678,
+        L = _G.CHARACTER_PROFESSION_LEATHERWORKING
+    },
+    MINING = {id = 186, icon = 4620679, L = _G.CHARACTER_PROFESSION_MINING},
+    SKINNING = {id = 393, icon = 4620680, L = _G.CHARACTER_PROFESSION_SKINNING},
+    TAILORING = {
+        id = 197,
+        icon = 4620681,
+        L = _G.CHARACTER_PROFESSION_TAILORING
+    }
+}
 
 -------------------------------------------------------------------------------
 
@@ -285,4 +333,5 @@ ns.NewLocale = NewLocale
 ns.PlayerHasItem = PlayerHasItem
 ns.PlayerHasProfession = PlayerHasProfession
 ns.PrepareLinks = PrepareLinks
+ns.PROFESSION = PROFESSION
 ns.RenderLinks = RenderLinks

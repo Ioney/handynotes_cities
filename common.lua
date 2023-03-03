@@ -21,7 +21,7 @@ local function Glow(name) return GLOWS .. '\\' .. name .. '.blp' end
 
 ns.icons.auctioneer = {Icon('auctioneer'), Glow('auctioneer')}
 ns.icons.banker = {Icon('banker'), Glow('banker')}
-ns.icons.barber = {Icon('barbershop'), Glow('barbershop')}
+ns.icons.barber = {Icon('barber'), Glow('barber')}
 ns.icons.innkeeper = {Icon('innkeeper'), Glow('innkeeper')}
 ns.icons.mailbox = {Icon('mailbox'), Glow('mailbox')}
 ns.icons.profession = {Icon('profession'), Glow('profession')}
@@ -73,7 +73,7 @@ ns.groups.INNKEEPER = Group('innkeeper', 'innkeeper')
 ns.groups.MAILBOX = Group('mailbox', 'mailbox')
 ns.groups.AUCTIONEER = Group('auctioneer', 'auctioneer',
                              {defaults = ns.GROUP_HIDDEN})
-ns.groups.BARBER = Group('barber', 'barbershop', {defaults = ns.GROUP_HIDDEN})
+ns.groups.BARBER = Group('barber', 'barber', {defaults = ns.GROUP_HIDDEN})
 ns.groups.FLIGHTMASTER = Group('flightmaster', 'flight_point_y')
 ns.groups.PORTALTRAINER = Group('portaltrainer', 237508, {
     IsEnabled = function(self) -- Only display group for skinning players
@@ -125,7 +125,7 @@ ns.node.Stablemaster = Class('Stablemaster', ns.node.NPC, {
 ns.node.Barber = Class('Barber', ns.node.NPC, {
     group = ns.groups.BARBER,
     sublabel = _G.MINIMAP_TRACKING_BARBER,
-    icon = 'barbershop'
+    icon = 'barber'
 })
 
 -------------------------------------------------------------------------------
