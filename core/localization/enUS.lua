@@ -12,6 +12,7 @@ L['leather'] = 'Leather'
 L['mail'] = 'Mail'
 L['plate'] = 'Plate'
 L['cosmetic'] = 'Cosmetic'
+L['shirt'] = 'Shirt'
 
 L['1h_mace'] = '1h Mace'
 L['1h_sword'] = '1h Sword'

@@ -598,7 +598,7 @@ end
 
 function Recipe:IsEnabled()
     if not Item.IsEnabled(self) then return false end
-    return ns.PlayerHasProfession(self.profession)
+    return ns.PlayerHasProfession(self.profession.id)
 end
 
 -------------------------------------------------------------------------------
