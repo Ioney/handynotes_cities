@@ -24,30 +24,34 @@ local map = Map({id = 125, settings = true})
 local udb = Map({id = 126, settings = true})
 -------------------------------------------------------------------------------
 
-map.nodes[49883677] = Mailbox()
-map.nodes[46213865] = Mailbox()
-map.nodes[52452712] = Mailbox()
-map.nodes[49112521] = Mailbox()
-map.nodes[40483251] = Mailbox()
+map.nodes[37226007] = Mailbox({faction = 'Alliance'})
 map.nodes[38774805] = Mailbox()
-map.nodes[44815889] = Mailbox()
+map.nodes[40483251] = Mailbox()
 map.nodes[44686782] = Mailbox()
+map.nodes[44815889] = Mailbox()
+map.nodes[46213865] = Mailbox()
+map.nodes[49112521] = Mailbox()
+map.nodes[49883677] = Mailbox()
 map.nodes[51275858] = Mailbox()
+map.nodes[52452712] = Mailbox()
 map.nodes[59464855] = Mailbox()
+map.nodes[63103137] = Mailbox({faction = 'Horde'})
 map.nodes[65614583] = Mailbox()
-map.nodes[63103137] = Mailbox()
-map.nodes[37226007] = Mailbox()
 udb.nodes[33715623] = Mailbox()
 
+map.nodes[44656332] = Innkeeper({id = 32413, faction = 'Alliance'})
+map.nodes[65643216] = Innkeeper({id = 31557, faction = 'Horde'})
 map.nodes[50253952] = Innkeeper({id = 28687})
-map.nodes[65643216] = Innkeeper({id = 31557})
-map.nodes[44656332] = Innkeeper({id = 32413})
 udb.nodes[35475756] = Innkeeper({id = 29532})
 
 map.nodes[59633742] = ns.node.Stablemaster({id = 28690})
 
-map.nodes[43177962] = Banker()
-map.nodes[53581525] = Banker()
+map.nodes[42237933] = Banker({id = 30607})
+map.nodes[43048002] = Banker({id = 30605})
+map.nodes[43938056] = Banker({id = 30604})
+map.nodes[52811433] = Banker({id = 28675})
+map.nodes[53691485] = Banker({id = 28677})
+map.nodes[54581536] = Banker({id = 28676})
 udb.nodes[32115543] = Banker({id = 29530})
 
 map.nodes[38522511] = Auctioneer({id = 35607})
@@ -61,8 +65,8 @@ map.nodes[52283155] = ns.node.Barber({id = 28708})
 map.nodes[42683205] = Trainer.Alchemy({id = 28703})
 map.nodes[48363820] = Trainer.Archaeology({id = 47579})
 map.nodes[45312768] = Trainer.Blacksmithing({id = 28694})
-map.nodes[69983899] = Trainer.Cooking({id = 29631})
-map.nodes[40256610] = Trainer.Cooking({id = 28705})
+map.nodes[69983899] = Trainer.Cooking({id = 29631, faction = 'Horde'})
+map.nodes[40256610] = Trainer.Cooking({id = 28705, faction = 'Alliance'})
 map.nodes[39053981] = Trainer.Enchanting({id = 28693})
 map.nodes[38492584] = Trainer.Engineering({id = 28697})
 map.nodes[53066495] = Trainer.Fishing({id = 28742})
@@ -713,6 +717,15 @@ map.nodes[51607123] = Vendor({
 
 map.nodes[52295553] = Vendor({
     id = 29527,
+    rewards = {
+        Transmog({item = 40698, slot = L['offhand']}),
+        Transmog({item = 40699, slot = L['offhand']})
+    }
+})
+
+udb.nodes[60021152] = Vendor({
+    id = 29538,
+    repair = true,
     rewards = {
         Transmog({item = 40698, slot = L['offhand']}),
         Transmog({item = 40699, slot = L['offhand']})

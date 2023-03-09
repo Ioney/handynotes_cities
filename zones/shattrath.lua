@@ -3,12 +3,14 @@
 -------------------------------------------------------------------------------
 local ADDON_NAME, ns = ...
 local L = ns.locale
+local P = ns.PROFESSION
 local Map = ns.Map
 
-local Toy = ns.reward.Toy
-local Pet = ns.reward.Pet
-local Transmog = ns.reward.Transmog
 local Mount = ns.reward.Mount
+local Pet = ns.reward.Pet
+local Recipe = ns.reward.Recipe
+local Toy = ns.reward.Toy
+local Transmog = ns.reward.Transmog
 
 local Mailbox = ns.node.Mailbox
 local Innkeeper = ns.node.Innkeeper
@@ -22,24 +24,34 @@ local Path = ns.poi.Path
 local map = Map({id = 111, settings = true})
 -------------------------------------------------------------------------------
 
-map.nodes[60086505] = Mailbox()
-map.nodes[47972466] = Mailbox()
 map.nodes[28064742] = Mailbox()
+map.nodes[46962544] = Mailbox()
+map.nodes[47972466] = Mailbox()
 map.nodes[55388051] = Mailbox()
-map.nodes[74754858] = Mailbox()
+map.nodes[60086505] = Mailbox()
+map.nodes[61156423] = Mailbox()
 map.nodes[73703448] = Mailbox()
+map.nodes[74754858] = Mailbox()
 
-map.nodes[56328154] = Innkeeper({id = 19232, note = L['scryers']})
-map.nodes[28284936] = Innkeeper({id = 19046, note = L['aldor']})
+map.nodes[56328154] = Innkeeper({id = 19232, rlabel = L['scryers']})
+map.nodes[28284936] = Innkeeper({id = 19046, rlabel = L['aldor']})
 
-map.nodes[55978002] = ns.node.Stablemaster({id = 21517, note = L['scryers']})
-map.nodes[28594774] = ns.node.Stablemaster({id = 21518, note = L['aldor']})
+map.nodes[55978002] = ns.node.Stablemaster({id = 21517, rlabel = L['scryers']})
+map.nodes[28594774] = ns.node.Stablemaster({id = 21518, rlabel = L['aldor']})
 
-map.nodes[60206040] = Banker({note = L['scryers']})
-map.nodes[47952939] = Banker({note = L['aldor']})
+map.nodes[60046046] = Banker({id = 19338, rlabel = L['scryers']})
+map.nodes[60356030] = Banker({id = 19246, rlabel = L['scryers']})
+map.nodes[47802944] = Banker({id = 19034, rlabel = L['aldor']})
+map.nodes[48112929] = Banker({id = 19318, rlabel = L['aldor']})
 
-map.nodes[56866275] = Auctioneer({note = L['scryers']})
-map.nodes[51242691] = Auctioneer({note = L['aldor']})
+map.nodes[56756237] = Auctioneer({id = 50140, rlabel = L['scryers']})
+-- map.nodes[56986315] = Auctioneer({id = 50139, rlabel= L['scryers']}) -- seems bugged, not clickable
+map.nodes[51062651] = Auctioneer({id = 50143, rlabel = L['aldor']})
+map.nodes[51372739] = Auctioneer({id = 50145, rlabel = L['aldor']})
+
+-------------------------------------------------------------------------------
+----------------------------------- VENDORS -----------------------------------
+-------------------------------------------------------------------------------
 
 map.nodes[48134292] = Vendor({
     id = 27667,
@@ -413,23 +425,23 @@ local heirlooms = {
 
 map.nodes[42419042] = Vendor({
     id = 20613,
-    sublabel = L['scryers'],
+    rlabel = L['scryers'],
     rewards = artifacts
 })
 map.nodes[23643284] = Vendor({
     id = 20616,
-    sublabel = L['aldor'],
+    rlabel = L['aldor'],
     rewards = artifacts
 })
 
 map.nodes[44959168] = Vendor({
     id = 21905,
-    sublabel = L['scryers'],
+    rlabel = L['scryers'],
     rewards = heirlooms
 })
 map.nodes[24882688] = Vendor({
     id = 21906,
-    sublabel = L['aldor'],
+    rlabel = L['aldor'],
     rewards = heirlooms
 })
 
@@ -464,58 +476,142 @@ map.nodes[61986884] = Vendor({
     }
 })
 
--- PROFESSIONS
+map.nodes[48604090] = Vendor({
+    id = 27666,
+    rewards = {
+        Recipe({item = 35239, profession = P.JEWELCRAFTING}),
+        Recipe({item = 35242, profession = P.JEWELCRAFTING}),
+        Recipe({item = 35243, profession = P.JEWELCRAFTING}),
+        Recipe({item = 35244, profession = P.JEWELCRAFTING}),
+        Recipe({item = 35246, profession = P.JEWELCRAFTING}),
+        Recipe({item = 35247, profession = P.JEWELCRAFTING}),
+        Recipe({item = 35248, profession = P.JEWELCRAFTING}),
+        Recipe({item = 35249, profession = P.JEWELCRAFTING}),
+        Recipe({item = 35251, profession = P.JEWELCRAFTING}),
+        Recipe({item = 35252, profession = P.JEWELCRAFTING}),
+        Recipe({item = 35253, profession = P.JEWELCRAFTING}),
+        Recipe({item = 35254, profession = P.JEWELCRAFTING}),
+        Recipe({item = 35258, profession = P.JEWELCRAFTING}),
+        Recipe({item = 35259, profession = P.JEWELCRAFTING}),
+        Recipe({item = 35260, profession = P.JEWELCRAFTING}),
+        Recipe({item = 35263, profession = P.JEWELCRAFTING}),
+        Recipe({item = 35264, profession = P.JEWELCRAFTING}),
+        Recipe({item = 35265, profession = P.JEWELCRAFTING}),
+        Recipe({item = 35266, profession = P.JEWELCRAFTING}),
+        Recipe({item = 35267, profession = P.JEWELCRAFTING}),
+        Recipe({item = 35269, profession = P.JEWELCRAFTING}),
+        Recipe({item = 35270, profession = P.JEWELCRAFTING}),
+        Recipe({item = 35271, profession = P.JEWELCRAFTING}),
+        Recipe({item = 35322, profession = P.JEWELCRAFTING}),
+        Recipe({item = 35323, profession = P.JEWELCRAFTING}),
+        Recipe({item = 35325, profession = P.JEWELCRAFTING}),
+        Recipe({item = 35767, profession = P.JEWELCRAFTING}),
+        Recipe({item = 35768, profession = P.JEWELCRAFTING})
+    }
+})
 
-map.nodes[36012073] = Trainer.Jewelcrafting({id = 19063, sublabel = L['aldor']})
-map.nodes[38243026] = Trainer.Herbalism({id = 33687, sublabel = L['aldor']})
-map.nodes[38733019] = Trainer.Alchemy({id = 33674, sublabel = L['aldor']})
-map.nodes[37553138] = Trainer.Blacksmithing({id = 33675, sublabel = L['aldor']})
-map.nodes[37753181] = Trainer.Engineering({id = 33677, sublabel = L['aldor']})
-map.nodes[37522767] =
-    Trainer.Leatherworking({id = 33681, sublabel = L['aldor']})
-map.nodes[37692698] = Trainer.Tailoring({id = 33684, sublabel = L['aldor']})
-map.nodes[37202701] = Trainer.Skinning({id = 33683, sublabel = L['aldor']})
+map.nodes[60516436] = Vendor({
+    id = 19331,
+    rlabel = L['scryers'],
+    rewards = {
+        Transmog({item = 29125, slot = L['dagger']}),
+        Transmog({item = 29131, slot = L['leather']}),
+        Transmog({item = 29133, slot = L['staff']}),
+        Transmog({item = 29134, slot = L['plate']}),
+        Transmog({item = 31780, slot = L['tabbard']}),
+        Recipe({item = 22908, profession = P.ALCHEMY}),
+        Recipe({item = 23133, profession = P.JEWELCRAFTING}),
+        Recipe({item = 23597, profession = P.BLACKSMITHING}),
+        Recipe({item = 23598, profession = P.BLACKSMITHING}),
+        Recipe({item = 23599, profession = P.BLACKSMITHING}),
+        Recipe({item = 23600, profession = P.BLACKSMITHING}),
+        Recipe({item = 23600, profession = P.BLACKSMITHING}),
+        Recipe({item = 23600, profession = P.BLACKSMITHING}),
+        Recipe({item = 24176, profession = P.JEWELCRAFTING}),
+        Recipe({item = 24292, profession = P.TAILORING}),
+        Recipe({item = 24294, profession = P.TAILORING}),
+        Recipe({item = 25722, profession = P.LEATHERWORKING}),
+        Recipe({item = 29677, profession = P.LEATHERWORKING}),
+        Recipe({item = 29682, profession = P.LEATHERWORKING}),
+        Recipe({item = 29684, profession = P.LEATHERWORKING}),
+        Recipe({item = 29698, profession = P.LEATHERWORKING}),
+        Recipe({item = 29700, profession = P.LEATHERWORKING}),
+        Recipe({item = 29701, profession = P.LEATHERWORKING})
+    }
+})
 
-map.nodes[38297097] = Trainer.Alchemy({id = 33630, sublabel = L['scryers']})
-map.nodes[38457116] = Trainer.Herbalism({id = 33639, sublabel = L['scryers']})
-map.nodes[44079069] = Trainer.Alchemy({id = 33608, sublabel = L['scryers']})
-map.nodes[43879059] = Trainer.Blacksmithing({
-    id = 33609,
-    sublabel = L['scryers']
+map.nodes[47702570] = Vendor({
+    id = 19321,
+    rlabel = L['aldor'],
+    rewards = {
+        Transmog({item = 29127, slot = L['plate']}),
+        Transmog({item = 29129, slot = L['cloth']}),
+        Transmog({item = 29130, slot = L['staff']}),
+        Transmog({item = 29124, slot = L['1h_sword']}),
+        Transmog({item = 31779, slot = L['tabard']}),
+        Recipe({item = 23145, profession = P.JEWELCRAFTING}),
+        Recipe({item = 23149, profession = P.JEWELCRAFTING}),
+        Recipe({item = 23601, profession = P.BLACKSMITHING}),
+        Recipe({item = 23602, profession = P.BLACKSMITHING}),
+        Recipe({item = 23603, profession = P.BLACKSMITHING}),
+        Recipe({item = 23604, profession = P.BLACKSMITHING}),
+        Recipe({item = 24177, profession = P.JEWELCRAFTING}),
+        Recipe({item = 24293, profession = P.TAILORING}),
+        Recipe({item = 24295, profession = P.TAILORING}),
+        Recipe({item = 25721, profession = P.LEATHERWORKING}),
+        Recipe({item = 29689, profession = P.LEATHERWORKING}),
+        Recipe({item = 29691, profession = P.LEATHERWORKING}),
+        Recipe({item = 29693, profession = P.LEATHERWORKING}),
+        Recipe({item = 29702, profession = P.LEATHERWORKING}),
+        Recipe({item = 29703, profession = P.LEATHERWORKING}),
+        Recipe({item = 29704, profession = P.LEATHERWORKING}),
+        Recipe({item = 30842, profession = P.TAILORING}),
+        Recipe({item = 30843, profession = P.TAILORING}),
+        Recipe({item = 30844, profession = P.TAILORING})
+    }
 })
-map.nodes[43689049] = Trainer.Enchanting({id = 33610, sublabel = L['scryers']})
-map.nodes[43509039] = Trainer.Engineering({id = 33611, sublabel = L['scryers']})
-map.nodes[43449056] = Trainer.Inscription({id = 33615, sublabel = L['scryers']})
-map.nodes[43649068] = Trainer.Jewelcrafting({
-    id = 33614,
-    sublabel = L['scryers']
-})
-map.nodes[43849077] = Trainer.Leatherworking({
-    id = 33612,
-    sublabel = L['scryers']
-})
-map.nodes[44029092] = Trainer.Tailoring({id = 33613, sublabel = L['scryers']})
-map.nodes[43799119] = Trainer.Herbalism({id = 33616, sublabel = L['scryers']})
-map.nodes[43599110] = Trainer.Mining({id = 33617, sublabel = L['scryers']})
-map.nodes[43409096] = Trainer.Skinning({id = 33618, sublabel = L['scryers']})
-map.nodes[43359111] = Trainer.Cooking({id = 33619, sublabel = L['scryers']})
-map.nodes[43539126] = Trainer.Fishing({id = 33623, sublabel = L['scryers']})
--- map.nodes[43739139] = Trainer.FirstAid({id = 33621, sublabel = L['scryers']})
-map.nodes[43269227] = Trainer.Enchanting({id = 19251, sublabel = L['scryers']})
-map.nodes[43459240] = Trainer.Enchanting({id = 19525, sublabel = L['scryers']})
-map.nodes[55907432] = Trainer.Inscription({id = 33638, sublabel = L['scryers']})
-map.nodes[55557467] = Trainer.Enchanting({id = 33633, sublabel = L['scryers']})
-map.nodes[58297511] = Trainer.Jewelcrafting({
-    id = 33637,
-    sublabel = L['scryers']
-})
-map.nodes[58787511] = Trainer.Mining({id = 33640, sublabel = L['scryers']})
 
-map.nodes[62667031] = Trainer.Archaeology({id = 47575})
+-------------------------------------------------------------------------------
+----------------------------- PROFESSION TRAINERS -----------------------------
+-------------------------------------------------------------------------------
+
+map.nodes[36012073] = Trainer.Jewelcrafting({id = 19063, rlabel = L['aldor']})
+map.nodes[38243026] = Trainer.Herbalism({id = 33687, rlabel = L['aldor']})
+map.nodes[38733019] = Trainer.Alchemy({id = 33674, rlabel = L['aldor']})
+map.nodes[37553138] = Trainer.Blacksmithing({id = 33675, rlabel = L['aldor']})
+map.nodes[37753181] = Trainer.Engineering({id = 33677, rlabel = L['aldor']})
+map.nodes[37522767] = Trainer.Leatherworking({id = 33681, rlabel = L['aldor']})
+map.nodes[37692698] = Trainer.Tailoring({id = 33684, rlabel = L['aldor']})
+map.nodes[37202701] = Trainer.Skinning({id = 33683, rlabel = L['aldor']})
+
+map.nodes[38297097] = Trainer.Alchemy({id = 33630, rlabel = L['scryers']})
+map.nodes[38457116] = Trainer.Herbalism({id = 33639, rlabel = L['scryers']})
+map.nodes[44079069] = Trainer.Alchemy({id = 33608, rlabel = L['scryers']})
+map.nodes[43879059] = Trainer.Blacksmithing({id = 33609, rlabel = L['scryers']})
+map.nodes[43689049] = Trainer.Enchanting({id = 33610, rlabel = L['scryers']})
+map.nodes[43509039] = Trainer.Engineering({id = 33611, rlabel = L['scryers']})
+map.nodes[43449056] = Trainer.Inscription({id = 33615, rlabel = L['scryers']})
+map.nodes[43649068] = Trainer.Jewelcrafting({id = 33614, rlabel = L['scryers']})
+map.nodes[43849077] =
+    Trainer.Leatherworking({id = 33612, rlabel = L['scryers']})
+map.nodes[44029092] = Trainer.Tailoring({id = 33613, rlabel = L['scryers']})
+map.nodes[43799119] = Trainer.Herbalism({id = 33616, rlabel = L['scryers']})
+map.nodes[43599110] = Trainer.Mining({id = 33617, rlabel = L['scryers']})
+map.nodes[43409096] = Trainer.Skinning({id = 33618, rlabel = L['scryers']})
+map.nodes[43359111] = Trainer.Cooking({id = 33619, rlabel = L['scryers']})
+map.nodes[43539126] = Trainer.Fishing({id = 33623, rlabel = L['scryers']})
+map.nodes[43269227] = Trainer.Enchanting({id = 19251, rlabel = L['scryers']})
+map.nodes[43459240] = Trainer.Enchanting({id = 19525, rlabel = L['scryers']})
+map.nodes[55907432] = Trainer.Inscription({id = 33638, rlabel = L['scryers']})
+map.nodes[55557467] = Trainer.Enchanting({id = 33633, rlabel = L['scryers']})
+map.nodes[58297511] = Trainer.Jewelcrafting({id = 33637, rlabel = L['scryers']})
+map.nodes[58787511] = Trainer.Mining({id = 33640, rlabel = L['scryers']})
+
 map.nodes[62656814] = Trainer.Cooking({id = 19185})
+map.nodes[62667031] = Trainer.Archaeology({id = 47575})
+map.nodes[63966591] = Trainer.Skinning({id = 19180})
 map.nodes[67256739] = Trainer.Leatherworking({id = 19187})
 map.nodes[69284292] = Trainer.Blacksmithing({id = 20124})
 map.nodes[69814200] = Trainer.Blacksmithing({id = 20125})
 map.nodes[76813426] = Trainer.Cooking({id = 19186})
-map.nodes[45622148] = Trainer.Alchemy({id = 19052})
-
+-- map.nodes[43739139] = Trainer.FirstAid({id = 33621, rlabel= L['scryers']})
