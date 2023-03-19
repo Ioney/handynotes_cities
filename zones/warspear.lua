@@ -9,6 +9,7 @@ local Toy = ns.reward.Toy
 local Pet = ns.reward.Pet
 local Transmog = ns.reward.Transmog
 local Mount = ns.reward.Mount
+local GBP = ns.reward.GarrisonBlueprint
 local Item = ns.reward.Item
 
 local Mailbox = ns.node.Mailbox
@@ -216,13 +217,16 @@ map.nodes[65166427] = Vendor({
 map.nodes[42583641] = Vendor({
     id = 85840,
     rewards = {
-        Item({item = 109254}), Item({item = 109256}), Item({item = 111929}),
-        Item({item = 111968}), Item({item = 111970}), Item({item = 111972}),
-        Item({item = 111974}), Item({item = 111976}), Item({item = 111978}),
-        Item({item = 111980}), Item({item = 111982}), Item({item = 111986}),
-        Item({item = 111988}), Item({item = 111990}), Item({item = 111992}),
-        Item({item = 112002}), Item({item = 116185}), Item({item = 116196}),
-        Item({item = 116200}), Item({item = 116431})
+        GBP({item = 109254, id = 41}), GBP({item = 109256, id = 123}),
+        GBP({item = 111929, id = 119}), GBP({item = 111968, id = 25}),
+        GBP({item = 111970, id = 27}), GBP({item = 111972, id = 125}),
+        GBP({item = 111974, id = 113}), GBP({item = 111976, id = 140}),
+        GBP({item = 111978, id = 129}), GBP({item = 111980, id = 160}),
+        GBP({item = 111982, id = 142}), GBP({item = 111986, id = 144}),
+        GBP({item = 111988, id = 121}), GBP({item = 111990, id = 117}),
+        GBP({item = 111992, id = 127}), GBP({item = 112002, id = 66}),
+        GBP({item = 116185, id = 9}), GBP({item = 116196, id = 38}),
+        GBP({item = 116200, id = 163}), GBP({item = 116431, id = 35})
     }
 })
 

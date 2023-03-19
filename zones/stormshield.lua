@@ -10,6 +10,7 @@ local Pet = ns.reward.Pet
 local Transmog = ns.reward.Transmog
 local Mount = ns.reward.Mount
 local Item = ns.reward.Item
+local GBP = ns.reward.GarrisonBlueprint
 
 local Mailbox = ns.node.Mailbox
 local Innkeeper = ns.node.Innkeeper
@@ -64,53 +65,37 @@ map.nodes[53465977] = Vendor({
 
 map.nodes[29665287] = Vendor({
     id = 85849,
-    rewards = {},
+    rewards = {
+        GBP({item = 107694, id = 35}), GBP({item = 109062, id = 38}),
+        GBP({item = 109254, id = 41}), GBP({item = 109256, id = 123}),
+        GBP({item = 111929, id = 119}), GBP({item = 111966, id = 9}),
+        GBP({item = 111968, id = 25}), GBP({item = 111970, id = 27}),
+        GBP({item = 111972, id = 125}), GBP({item = 111974, id = 113}),
+        GBP({item = 111976, id = 140}), GBP({item = 111978, id = 129}),
+        GBP({item = 111980, id = 160}), GBP({item = 111982, id = 142}),
+        GBP({item = 111984, id = 163}), GBP({item = 111986, id = 144}),
+        GBP({item = 111988, id = 121}), GBP({item = 111990, id = 117}),
+        GBP({item = 111992, id = 127}), GBP({item = 112002, id = 66})
+    }
 })
 
-map.nodes[51196177] = Vendor({
-    id = 92501,
-    rewards = {},
-}) -- Apexis Belt Trader
+map.nodes[51196177] = Vendor({id = 92501, rewards = {}}) -- Apexis Belt Trader
 
-map.nodes[50786145] = Vendor({
-    id = 86391,
-    rewards = {},
-}) -- Apexis Leggings Trader
+map.nodes[50786145] = Vendor({id = 86391, rewards = {}}) -- Apexis Leggings Trader
 
-map.nodes[49966110] = Vendor({
-    id = 86387,
-    rewards = {},
-}) -- Apexis Helm Trader
+map.nodes[49966110] = Vendor({id = 86387, rewards = {}}) -- Apexis Helm Trader
 
-map.nodes[49386119] = Vendor({
-    id = 86389,
-    rewards = {},
-}) -- Apexis Cloak Trader
+map.nodes[49386119] = Vendor({id = 86389, rewards = {}}) -- Apexis Cloak Trader
 
-map.nodes[48896156] = Vendor({
-    id = 91321,
-    rewards = {},
-}) -- Apexis Bracer Trader
+map.nodes[48896156] = Vendor({id = 91321, rewards = {}}) -- Apexis Bracer Trader
 
-map.nodes[48476219] = Vendor({
-    id = 86390,
-    rewards = {},
-}) -- Apexis Bracer Trader
+map.nodes[48476219] = Vendor({id = 86390, rewards = {}}) -- Apexis Bracer Trader
 
-map.nodes[44497487] = Vendor({
-    id = 85946,
-    rewards = {},
-}) -- Arakkoa Outcasts Quartermaster
+map.nodes[44497487] = Vendor({id = 85946, rewards = {}}) -- Arakkoa Outcasts Quartermaster
 
-map.nodes[42917788] = Vendor({
-    id = 88482,
-    rewards = {},
-}) -- Wteamwheedle Quartermaster
+map.nodes[42917788] = Vendor({id = 88482, rewards = {}}) -- Wteamwheedle Quartermaster
 
-map.nodes[46627676] = Vendor({
-    id = 85932,
-    rewards = {},
-}) -- Council of Exarchs Quartermaster
+map.nodes[46627676] = Vendor({id = 85932, rewards = {}}) -- Council of Exarchs Quartermaster
 -------------------------------------------------------------------------------
 ------------------------ PROFESSION TRAINERS & VENDORS ------------------------
 -------------------------------------------------------------------------------
@@ -130,42 +115,18 @@ map.nodes[47304367] = Trainer.Mining({id = 85919})
 map.nodes[52264329] = Trainer.Skinning({id = 85923})
 map.nodes[51533708] = Trainer.Tailoring({id = 85910})
 
-map.nodes[51303625] = Vendor({
-    id = 87049,
-    rewards = {},
-})
+map.nodes[51303625] = Vendor({id = 87049, rewards = {}})
 
-map.nodes[44133777] = Vendor({
-    id = 87052,
-    rewards = {},
-})
+map.nodes[44133777] = Vendor({id = 87052, rewards = {}})
 
-map.nodes[47873985] = Vendor({
-    id = 87065,
-    rewards = {},
-})
+map.nodes[47873985] = Vendor({id = 87065, rewards = {}})
 
-map.nodes[48974879] = Vendor({
-    id = 87062,
-    rewards = {},
-})
+map.nodes[48974879] = Vendor({id = 87062, rewards = {}})
 
-map.nodes[52004153] = Vendor({
-    id = 87057,
-    rewards = {},
-})
+map.nodes[52004153] = Vendor({id = 87057, rewards = {}})
 
-map.nodes[56966472] = Vendor({
-    id = 87022,
-    rewards = {},
-})
+map.nodes[56966472] = Vendor({id = 87022, rewards = {}})
 
-map.nodes[36736858] = Vendor({
-    id = 87048,
-    rewards = {},
-})
+map.nodes[36736858] = Vendor({id = 87048, rewards = {}})
 
-map.nodes[61963337] = Vendor({
-    id = 87063,
-    rewards = {},
-})
+map.nodes[61963337] = Vendor({id = 87063, rewards = {}})

@@ -336,7 +336,7 @@ end
 -------------------------------------------------------------------------------
 
 local Mount = Class('Mount', Item,
-    {display_option = 'show_mount_rewards', type = L['mount']})
+                    {display_option = 'show_mount_rewards', type = L['mount']})
 
 function Mount:IsObtained()
     return select(11, C_MountJournal.GetMountInfoByID(self.id))
@@ -352,7 +352,7 @@ end
 -------------------------------------------------------------------------------
 
 local Pet = Class('Pet', Item,
-    {display_option = 'show_pet_rewards', type = L['pet']})
+                  {display_option = 'show_pet_rewards', type = L['pet']})
 
 function Pet:Initialize(attrs)
     if attrs.item then
@@ -457,7 +457,7 @@ end
 -------------------------------------------------------------------------------
 
 local Toy = Class('Toy', Item,
-    {display_option = 'show_toy_rewards', type = L['toy']})
+                  {display_option = 'show_toy_rewards', type = L['toy']})
 
 function Toy:IsObtained() return PlayerHasToy(self.item) end
 
@@ -471,7 +471,7 @@ end
 -------------------------------------------------------------------------------
 
 local Transmog = Class('Transmog', Item,
-    {display_option = 'show_transmog_rewards'})
+                       {display_option = 'show_transmog_rewards'})
 
 local CTC = C_TransmogCollection
 
@@ -602,11 +602,37 @@ function Recipe:IsEnabled()
 end
 
 -------------------------------------------------------------------------------
+----------------------------- GARRISON BLUEPRINT ------------------------------
+-------------------------------------------------------------------------------
+
+-- Only works inside your Garrison
+local GarrisonBlueprint = Class('GarrisonBlueprint', Item,
+                                {type = L['garrison_blueprint']})
+
+-- function GarrisonBlueprint:Initialize(attrs)
+--     Item.Initialize(self, attrs)
+
+--     if not self.id then
+--         error('GarrisonBlueprint() reward requires a building id to be set')
+--     end
+-- end
+
+-- function GarrisonBlueprint:IsObtained()
+--     local built = select(11, C_Garrison.GetBuildingInfo(self.id))
+--     return not built
+-- end
+
+-- function GarrisonBlueprint:GetStatus()
+--     return self:IsObtained() and Green(L['known']) or Red(L['missing'])
+-- end
+
+-------------------------------------------------------------------------------
 
 ns.reward = {
     Achievement = Achievement,
     Currency = Currency,
     Follower = Follower,
+    GarrisonBlueprint = GarrisonBlueprint,
     Heirloom = Heirloom,
     Item = Item,
     Mount = Mount,
