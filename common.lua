@@ -299,7 +299,7 @@ ns.node.Voidstorage = Class('Voidstorage', ns.node.NPC, {
 --------------------------------- Flightmaster ---------------------------------
 -------------------------------------------------------------------------------
 
-ns.node.Flightmaster = Class('Flightmaster', ns.node.Node, {
+ns.node.Flightmaster = Class('Flightmaster', ns.node.NPC, {
     group = ns.groups.FLIGHTMASTER,
     sublabel = _G.MINIMAP_TRACKING_FLIGHTMASTER,
     icon = 'flight_point_y'
