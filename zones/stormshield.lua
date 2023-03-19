@@ -54,15 +54,6 @@ map.nodes[53766431] = Auctioneer({id = 56733})
 ----------------------------------- VENDORS -----------------------------------
 -------------------------------------------------------------------------------
 
-map.nodes[53465977] = Vendor({
-    id = 86037,
-    rewards = {
-        Mount({item = 116772, id = 635}),
-        Transmog({item = 119136, slot = L['tabard']}),
-        Pet({item = 119143, id = 1574})
-    }
-})
-
 map.nodes[29665287] = Vendor({
     id = 85849,
     rewards = {
@@ -79,23 +70,182 @@ map.nodes[29665287] = Vendor({
     }
 })
 
-map.nodes[51196177] = Vendor({id = 92501, rewards = {}}) -- Apexis Belt Trader
+local follower_DawnseekerRukaryx = ns.reward.Follower({
+    id = 462,
+    note = '{icon:979575}{item:119821}'
+})
+local mount_MosshideRiverwallow = Mount({
+    item = 116768,
+    id = 632,
+    note = '+5000 {currency:823}'
+})
 
-map.nodes[50786145] = Vendor({id = 86391, rewards = {}}) -- Apexis Leggings Trader
+map.nodes[51196177] = Vendor({
+    id = 92501,
+    rewards = {
+        mount_MosshideRiverwallow, Transmog({item = 115378, slot = L['cloth']}),
+        Transmog({item = 115379, slot = L['leather']}),
+        Transmog({item = 115380, slot = L['mail']}),
+        Transmog({item = 115381, slot = L['plate']}),
+        Transmog({item = 116935, slot = L['cloth']}),
+        Transmog({item = 116936, slot = L['leather']}),
+        Transmog({item = 116937, slot = L['Mail']}),
+        Transmog({item = 116938, slot = L['plate']}),
+        Transmog({item = 116939, slot = L['cloth']}),
+        Transmog({item = 116940, slot = L['leather']}),
+        Transmog({item = 116941, slot = L['mail']}),
+        Transmog({item = 116942, slot = L['plate']}),
+        Transmog({item = 122320, slot = L['cloth']}),
+        Transmog({item = 122321, slot = L['leather']}),
+        Transmog({item = 122322, slot = L['mail']}),
+        Transmog({item = 122323, slot = L['plate']}), follower_DawnseekerRukaryx
+    }
+}) -- Apexis Belt Trader
 
-map.nodes[49966110] = Vendor({id = 86387, rewards = {}}) -- Apexis Helm Trader
+map.nodes[50786145] = Vendor({
+    id = 86391,
+    rewards = {
+        mount_MosshideRiverwallow, Transmog({item = 115374, slot = L['cloth']}),
+        Transmog({item = 115375, slot = L['leather']}),
+        Transmog({item = 115376, slot = L['mail']}),
+        Transmog({item = 115377, slot = L['plate']}),
+        Transmog({item = 116927, slot = L['cloth']}),
+        Transmog({item = 116928, slot = L['leather']}),
+        Transmog({item = 116929, slot = L['mail']}),
+        Transmog({item = 116930, slot = L['plate']}),
+        Transmog({item = 116931, slot = L['cloth']}),
+        Transmog({item = 116932, slot = L['leather']}),
+        Transmog({item = 116933, slot = L['mail']}),
+        Transmog({item = 116934, slot = L['plate']}),
+        Transmog({item = 122316, slot = L['cloth']}),
+        Transmog({item = 122317, slot = L['leather']}),
+        Transmog({item = 122318, slot = L['mail']}),
+        Transmog({item = 122319, slot = L['plate']}), follower_DawnseekerRukaryx
+    }
+}) -- Apexis Leggings Trader
 
-map.nodes[49386119] = Vendor({id = 86389, rewards = {}}) -- Apexis Cloak Trader
+map.nodes[49966110] = Vendor({
+    id = 86387,
+    rewards = {
+        mount_MosshideRiverwallow, Transmog({item = 115396, slot = L['cloth']}),
+        Transmog({item = 115397, slot = L['leather']}),
+        Transmog({item = 115398, slot = L['mail']}),
+        Transmog({item = 115399, slot = L['plate']}),
+        Transmog({item = 116953, slot = L['cloth']}),
+        Transmog({item = 116954, slot = L['leather']}),
+        Transmog({item = 116955, slot = L['mail']}),
+        Transmog({item = 116956, slot = L['plate']}),
+        Transmog({item = 116957, slot = L['cloth']}),
+        Transmog({item = 116958, slot = L['leather']}),
+        Transmog({item = 116959, slot = L['mail']}),
+        Transmog({item = 116960, slot = L['plate']}),
+        Transmog({item = 122308, slot = L['cloth']}),
+        Transmog({item = 122309, slot = L['leather']}),
+        Transmog({item = 122310, slot = L['mail']}),
+        Transmog({item = 122311, slot = L['plate']}), follower_DawnseekerRukaryx
+    }
+}) -- Apexis Helm Trader
 
-map.nodes[48896156] = Vendor({id = 91321, rewards = {}}) -- Apexis Bracer Trader
+map.nodes[49386119] = Vendor({
+    id = 86389,
+    rewards = {
+        mount_MosshideRiverwallow, Transmog({item = 115391, slot = L['cloak']}),
+        Transmog({item = 115392, slot = L['cloak']}),
+        Transmog({item = 115393, slot = L['cloak']}),
+        Transmog({item = 115394, slot = L['cloak']}),
+        Transmog({item = 115395, slot = L['cloak']}),
+        Transmog({item = 116951, slot = L['cloak']}),
+        Transmog({item = 116952, slot = L['cloak']}),
+        Transmog({item = 116969, slot = L['cloak']}),
+        Transmog({item = 116970, slot = L['cloak']}),
+        Transmog({item = 116971, slot = L['cloak']}),
+        Transmog({item = 116972, slot = L['cloak']}),
+        Transmog({item = 116973, slot = L['cloak']}),
+        Transmog({item = 116974, slot = L['cloak']}),
+        Transmog({item = 116975, slot = L['cloak']}),
+        Transmog({item = 116976, slot = L['cloak']}),
+        Transmog({item = 122328, slot = L['cloak']}),
+        Transmog({item = 122329, slot = L['cloak']}),
+        Transmog({item = 122330, slot = L['cloak']}),
+        Transmog({item = 122331, slot = L['cloak']}),
+        Transmog({item = 122332, slot = L['cloak']}), follower_DawnseekerRukaryx
+    }
+}) -- Apexis Cloak Trader
 
-map.nodes[48476219] = Vendor({id = 86390, rewards = {}}) -- Apexis Bracer Trader
+map.nodes[48896156] = Vendor({
+    id = 91321,
+    rewards = {
+        mount_MosshideRiverwallow, Transmog({item = 115400, slot = L['cloth']}),
+        Transmog({item = 115401, slot = L['leather']}),
+        Transmog({item = 115402, slot = L['mail']}),
+        Transmog({item = 115403, slot = L['plate']}),
+        Transmog({item = 116961, slot = L['cloth']}),
+        Transmog({item = 116962, slot = L['leather']}),
+        Transmog({item = 116963, slot = L['mail']}),
+        Transmog({item = 116964, slot = L['plate']}),
+        Transmog({item = 116965, slot = L['cloth']}),
+        Transmog({item = 116966, slot = L['leather']}),
+        Transmog({item = 116967, slot = L['mail']}),
+        Transmog({item = 116968, slot = L['plate']}),
+        Transmog({item = 122312, slot = L['cloth']}),
+        Transmog({item = 122313, slot = L['leather']}),
+        Transmog({item = 122314, slot = L['mail']}),
+        Transmog({item = 122315, slot = L['plate']}), follower_DawnseekerRukaryx
+    }
+}) -- Apexis Bracer Trader
 
-map.nodes[44497487] = Vendor({id = 85946, rewards = {}}) -- Arakkoa Outcasts Quartermaster
+map.nodes[48476219] = Vendor({
+    id = 86390,
+    rewards = {
+        mount_MosshideRiverwallow, Transmog({item = 115387, slot = L['cloth']}),
+        Transmog({item = 115388, slot = L['leather']}),
+        Transmog({item = 115389, slot = L['mail']}),
+        Transmog({item = 115390, slot = L['plate']}),
+        Transmog({item = 116943, slot = L['cloth']}),
+        Transmog({item = 116944, slot = L['leather']}),
+        Transmog({item = 116945, slot = L['mail']}),
+        Transmog({item = 116946, slot = L['plate']}),
+        Transmog({item = 116947, slot = L['cloth']}),
+        Transmog({item = 116948, slot = L['leather']}),
+        Transmog({item = 116949, slot = L['mail']}),
+        Transmog({item = 116950, slot = L['plate']}),
+        Transmog({item = 122324, slot = L['cloth']}),
+        Transmog({item = 122325, slot = L['leather']}),
+        Transmog({item = 122326, slot = L['mail']}),
+        Transmog({item = 122327, slot = L['plate']}), follower_DawnseekerRukaryx
+    }
+}) -- Apexis Bracer Trader
 
-map.nodes[42917788] = Vendor({id = 88482, rewards = {}}) -- Wteamwheedle Quartermaster
+map.nodes[44497487] = Vendor({
+    id = 85946,
+    rewards = {
+        Mount({item = 116772, id = 635}),
+        Transmog({item = 119136, slot = L['tabard']}),
+        Pet({item = 119143, id = 1574})
+    }
+}) -- Arakkoa Outcasts Quartermaster
 
-map.nodes[46627676] = Vendor({id = 85932, rewards = {}}) -- Council of Exarchs Quartermaster
+map.nodes[42917788] = Vendor({
+    id = 88482,
+    rewards = {
+        Mount({item = 116672, id = 625, note = '+5000 {currency:823}'}),
+        Pet({item = 119148, id = 1571}), Pet({item = 119149, id = 1430}),
+        Transmog({item = 119137, slot = L['tabard']}),
+        ns.reward.Follower({id = 460, note = '{icon:979575}{item:119165}'})
+    }
+}) -- Wteamwheedle Quartermaster
+
+map.nodes[46627676] = Vendor({
+    id = 85932,
+    rewards = {
+        Transmog({item = 113135, slot = L['tabard']}),
+        Mount({item = 116664, id = 617}), Pet({item = 119142, id = 1450}),
+        Toy({item = 115472}),
+        ns.reward.Follower({id = 462, note = '{icon:979575}{item:119162}'})
+
+    }
+}) -- Council of Exarchs Quartermaster
+
 -------------------------------------------------------------------------------
 ------------------------ PROFESSION TRAINERS & VENDORS ------------------------
 -------------------------------------------------------------------------------
