@@ -23,7 +23,7 @@ Base class for all maps.
 --]]
 
 local Map = Class('Map', nil,
-    {id = 0, intro = nil, phased = true, settings = false})
+                  {id = 0, intro = nil, phased = true, settings = false})
 
 function Map:Initialize(attrs)
     for k, v in pairs(attrs) do self[k] = v end
@@ -50,7 +50,7 @@ end
 function Map:AddNode(coord, node)
     if not ns.IsInstance(node, ns.node.Node) then
         error(format('All nodes must be instances of the Node() class: %d %s',
-            coord, tostring(node)))
+                     coord, tostring(node)))
     end
 
     if node.fgroup then
@@ -91,7 +91,7 @@ function Map:AddNode(coord, node)
             local px, py = HBD:GetZoneCoordinatesFromWorld(wx, wy, parent.id)
             if not (px and py) then
                 error(format('Missing map coords: (%d: %d) => (%d: ???)',
-                    self.id, coord, parent.id))
+                             self.id, coord, parent.id))
             end
             local map = ns.maps[parent.id] or Map({id = parent.id})
             map.nodes[HandyNotes:getCoord(px, py)] = ns.Clone(node, {
@@ -130,6 +130,9 @@ function Map:CanDisplay(node, coord, minimap)
 
     -- Node may be faction restricted
     if node.faction and node.faction ~= ns.faction then return false end
+    if node.profession and not ns.PlayerHasProfession(node.profession.id) then
+        return false
+    end
 
     return true
 end
@@ -223,7 +226,7 @@ function MinimapDataProvider:AcquirePin(template, ...)
         self.pool[pin] = nil -- remove it from the pool
     else
         pin = CreateFrame('Button', ADDON_NAME .. 'Pin' .. (#self.pins + 1),
-            Minimap, template)
+                          Minimap, template)
         pin.provider = self
         pin:OnLoad()
         pin:Hide()
@@ -316,7 +319,7 @@ MinimapDataProvider:SetScript('OnUpdate', function()
 end)
 
 ns.addon:RegisterEvent('MINIMAP_UPDATE_ZOOM',
-    function(...) MinimapDataProvider:RefreshAllData() end)
+                       function(...) MinimapDataProvider:RefreshAllData() end)
 
 ns.addon:RegisterEvent('CVAR_UPDATE', function(_, varname)
     if varname == 'ROTATE_MINIMAP' then MinimapDataProvider:RefreshAllData() end

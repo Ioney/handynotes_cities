@@ -14,36 +14,40 @@ local Trainer = ns.node.Trainer
 local Path = ns.poi.Path
 -------------------------------------------------------------------------------
 local map = Map({id = 390, settings = true})
-local hrd = Map({id = 391, settings = true})
-local hrd_2 = Map({id = 392, settings = true})
+local H = Map({id = 391, settings = true})
+local H2 = Map({id = 392, settings = true})
+local A = Map({id = 393, settings = true})
+local A2 = Map({id = 394, settings = true})
 -------------------------------------------------------------------------------
 
-hrd.nodes[67035212] = Mailbox()
-hrd.nodes[33795918] = Mailbox()
-hrd.nodes[59455014] = Mailbox()
-hrd.nodes[49918370] = Mailbox({parent = 390})
-hrd_2.nodes[22783900] = Mailbox()
-hrd_2.nodes[71002875] = Mailbox()
-hrd_2.nodes[62907461] = Mailbox()
-hrd_2.nodes[39157954] = Mailbox()
+H.nodes[67035212] = Mailbox()
+H.nodes[33795918] = Mailbox()
+H.nodes[59455014] = Mailbox()
+H.nodes[49918370] = Mailbox({parent = map.id})
+H2.nodes[22783900] = Mailbox()
+H2.nodes[71002875] = Mailbox()
+H2.nodes[62907461] = Mailbox()
+H2.nodes[39157954] = Mailbox()
+
+H.nodes[67035212] = Mailbox()
 
 map.nodes[60282278] = ns.node.Stablemaster({id = 63986, faction = 'Horde'})
 
-hrd.nodes[68404767] = Innkeeper({id = 62996, faction = 'Horde'})
-hrd_2.nodes[60277699] = Innkeeper({id = 16618, faction = 'Horde'})
+H.nodes[68404767] = Innkeeper({id = 62996, faction = 'Horde'})
+H2.nodes[60277699] = Innkeeper({id = 16618, faction = 'Horde'})
 
-hrd_2.nodes[59141805] = ns.node.Transmogrifier({id = 67014, faction = 'Horde'})
-hrd_2.nodes[64121698] = ns.node.Voidstorage({id = 67013, faction = 'Horde'})
+H2.nodes[59141805] = ns.node.Transmogrifier({id = 67014, faction = 'Horde'})
+H2.nodes[64121698] = ns.node.Voidstorage({id = 67013, faction = 'Horde'})
 
-hrd_2.nodes[22305467] = Banker({id = 63964, faction = 'Horde'})
-hrd_2.nodes[22006200] = Banker({id = 63965, faction = 'Horde'})
-hrd_2.nodes[20844794] = Banker({id = 63966, faction = 'Horde'})
+H2.nodes[22305467] = Banker({id = 63964, faction = 'Horde'})
+H2.nodes[22006200] = Banker({id = 63965, faction = 'Horde'})
+H2.nodes[20844794] = Banker({id = 63966, faction = 'Horde'})
 
 map.nodes[62792338] = Vendor({id = 64001, rewards = {}})
 
 map.nodes[63232207] = Vendor({id = 59908, rewards = {}})
 
-hrd_2.nodes[43787346] = Vendor({
+H2.nodes[43787346] = Vendor({
     id = 73674,
     rewards = {
         Transmog({item = 98977, slot = L['mail']}),
@@ -165,7 +169,7 @@ hrd_2.nodes[43787346] = Vendor({
     faction = 'Horde'
 })
 
-hrd_2.nodes[44257583] = Vendor({
+H2.nodes[44257583] = Vendor({
     id = 74010,
     rewards = {
         Transmog({item = 99552, slot = L['leather']}),
@@ -287,7 +291,7 @@ hrd_2.nodes[44257583] = Vendor({
     faction = 'Horde'
 })
 
-hrd_2.nodes[44327855] = Vendor({
+H2.nodes[44327855] = Vendor({
     id = 74012,
     rewards = {
         Transmog({item = 99092, slot = L['mail']}),
@@ -409,7 +413,7 @@ hrd_2.nodes[44327855] = Vendor({
     faction = 'Horde'
 })
 
-hrd_2.nodes[44448127] = Vendor({
+H2.nodes[44448127] = Vendor({
     id = 74019,
     rewards = {
         Transmog({item = 99322, slot = L['leather']}),
@@ -531,6 +535,79 @@ hrd_2.nodes[44448127] = Vendor({
     faction = 'Horde'
 })
 
-hrd.nodes[25804390] = Trainer.Blacksmithing({id = 16669, faction = 'Horde'})
-hrd.nodes[61004185] = Trainer.Engineering({id = 64924, faction = 'Horde'})
--- hrd.nodes[29327555] = Trainer.FirstAid({id = 65862, faction = 'Horde'})
+H.nodes[25804390] = Trainer.Blacksmithing({id = 16669, faction = 'Horde'})
+H.nodes[61004185] = Trainer.Engineering({id = 64924, faction = 'Horde'})
+
+-------------------------------------------------------------------------------
+---------------------------- SHRINE OF SEVEN STARS ----------------------------
+---------------------------------- ALLIANCE -----------------------------------
+-------------------------------------------------------------------------------
+
+map.nodes[87136385] = Mailbox()
+map.nodes[84606068] = Mailbox()
+A.nodes[57885237] = Mailbox()
+A.nodes[30006315] = Mailbox()
+A2.nodes[39306155] = Mailbox()
+
+map.nodes[84636346] = ns.node.Stablemaster({id = 63988, faction = 'Alliance'})
+A.nodes[36426667] = Innkeeper({id = 64149, faction = 'Alliance'})
+
+A2.nodes[40578050] = Banker({id = 63969, faction = 'Alliance'})
+A2.nodes[38897521] = Banker({id = 63968, faction = 'Alliance'})
+A2.nodes[35947093] = Banker({id = 63971, faction = 'Alliance'})
+A2.nodes[45276564] = Banker({id = 64023, faction = 'Alliance'})
+A2.nodes[45496679] = Banker({id = 63967, faction = 'Alliance'})
+A2.nodes[45906764] = Banker({id = 64024, faction = 'Alliance'})
+A2.nodes[46486807] = Banker({id = 63970, faction = 'Alliance'})
+
+
+A2.nodes[56418531] = ns.node.Transmogrifier({id = 64573, faction = 'Alliance'})
+A2.nodes[53058936] = ns.node.Voidstorage({id = 64574, faction = 'Alliance'})
+
+
+A.nodes[57045254] = ns.node.Auctioneer({
+    id = 65599,
+    profession = ns.PROFESSION.ENGINEER, faction = 'Alliance'
+})
+
+A.nodes[6424417] = Vendor({id = 64052, rewards = {}, faction = 'Alliance'})
+
+A.nodes[76544844] = Vendor({id = 64094, rewards = {}, faction = 'Alliance'})
+
+A.nodes[71275052] = Vendor({id = 64085, repair = true, rewards = {}, faction = 'Alliance'})
+
+A2.nodes[41274136] = Vendor({
+    id = 74020,
+    repair = true,
+    rewards = {},
+})
+
+A2.nodes[42604226] = Vendor({
+    id = 74022,
+    repair = true,
+    rewards = {},
+})
+
+A2.nodes[43754483] = Vendor({
+    id = 74021,
+    repair = true,
+    rewards = {},
+})
+
+A2.nodes[43904702] = Vendor({
+    id = 74027,
+    repair = true,
+    rewards = {},
+})
+
+map.nodes[84236278] = Vendor({
+    id = 59908,
+    repair = true,
+    rewards = {},
+})
+
+map.nodes[84626382] = Vendor({
+    id = 64032,
+    repair = true,
+    rewards = {},
+})
