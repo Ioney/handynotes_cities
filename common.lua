@@ -63,7 +63,7 @@ ns.icons.prof_archaeology = {
 }
 ns.icons.prof_cooking = {Icon('profession_cooking'), Glow('profession_glow')}
 ns.icons.prof_fishing = {Icon('profession_fishing'), Glow('profession_glow')}
-ns.icons.portal_trainer = {Icon('portal_trainer'), Glow('profession_glow')}
+ns.icons.portal_trainer = {Icon('portal_trainer'), Glow('portal_trainer')}
 
 -------------------------------------------------------------------------------
 ------------------------------------ GROUPS -----------------------------------
@@ -77,10 +77,7 @@ ns.groups.AUCTIONEER = Group('auctioneer', 'auctioneer',
 ns.groups.BARBER = Group('barber', 'barber', {defaults = ns.GROUP_HIDDEN})
 ns.groups.FLIGHTMASTER = Group('flightmaster', 'flight_point_y')
 ns.groups.PORTALTRAINER = Group('portaltrainer', 237508, {
-    IsEnabled = function(self) -- Only display group for skinning players
-        local _, _, class = UnitClass("player")
-        if not class == 8 then return true end
-    end
+    IsEnabled = function(self) return ns.class == "MAGE" end
 })
 ns.groups.PROFESSION = Group('profession', 'profession')
 ns.groups.STABLEMASTER = Group('stablemaster', 'stablemaster')
@@ -236,7 +233,8 @@ end
 ns.node.PortalTrainer = Class('PortalTrainer', ns.node.NPC, {
     group = ns.groups.PORTALTRAINER,
     sublabel = L['portal_trainer'],
-    icon = 'portal_trainer'
+    icon = 'portal_trainer',
+    IsEnabled = function(self) return ns.class == 'MAGE' end
 })
 
 -------------------------------------------------------------------------------
@@ -353,3 +351,21 @@ ns.node.WorkOrders = Class('WorkOrders', ns.node.NPC, {
     sublabel = _G.CAPACITANCE_WORK_ORDERS,
     icon = 'scroll'
 })
+
+-------------------------------------------------------------------------------
+-------------------------------- TRADING POST ---------------------------------
+-------------------------------------------------------------------------------
+
+-- local function cost(cost) return cost .. ' |T4696085:0|t' end
+
+-- ns.TradingPost = Class('TradingPost', ns.node.Node, {
+--     icon = 4696085,
+--     label = L['trading_post'],
+--     note = L['travelers_log_reward'],
+--     rewards = {
+--         Mount({item = 54811, id = 376, note = cost(900)}), -- Celestial Steed
+--         Transmog({item = 189898, slot = L['1h_mace'], note = cost(750)}), --
+--         Pet({item = 185606, id = 3252, note = cost(750)}), -- Garrlok
+--         Transmog({item = 190799, slot = L['cosmetic'], note = cost(650)}) -- Ensemble: Swashbuckling Buccaneer's Slops
+--     }
+-- })

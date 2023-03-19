@@ -283,6 +283,11 @@ local PROFESSION = {
         icon = 4620670,
         L = _G.CHARACTER_PROFESSION_BLACKSMITHING
     },
+    COOKING = {
+        id = 185,
+        icon = 4620671,
+        L = _G.CHARACTER_PROFESSION_COOKING
+    },
     ENCHANTING = {
         id = 333,
         icon = 4620672,

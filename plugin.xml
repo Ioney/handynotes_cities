@@ -6,9 +6,10 @@
   <Script file="zones\undercity.lua"/>
   <Script file="zones\silvermoon.lua"/>
 
-  <Script file="zones\stormwind.lua"/>
-  <Script file="zones\ironforge.lua"/>
   <Script file="zones\darnassus.lua"/>
+  <Script file="zones\exodar.lua"/>
+  <Script file="zones\ironforge.lua"/>
+  <Script file="zones\stormwind.lua"/>
 
   <Script file="zones\dalaran_legion.lua"/>
   <Script file="zones\dalaran_wotlk.lua"/>
