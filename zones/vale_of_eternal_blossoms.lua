@@ -48,9 +48,116 @@ H2.nodes[20844794] = Banker({id = 63966, faction = 'Horde'})
 -------------------------------------------------------------------------------
 ----------------------------------- VENDORS -----------------------------------
 -------------------------------------------------------------------------------
-map.nodes[62792338] = Vendor({id = 64001, rewards = {}})
+map.nodes[62792338] = Vendor({
+    id = 64001,
+    rewards = {
+        Transmog({item = 88741, slot = L['cloth']}),
+        Transmog({item = 88742, slot = L['cloth']}),
+        Transmog({item = 88743, slot = L['leather']}),
+        Transmog({item = 88744, slot = L['leather']}),
+        Transmog({item = 88745, slot = L['mail']}),
+        Transmog({item = 88746, slot = L['plate']}),
+        Transmog({item = 88747, slot = L['plate']}),
+        Transmog({item = 88748, slot = L['mail']}),
+        Transmog({item = 88749, slot = L['plate']}),
+        Transmog({item = 88862, slot = L['plate']}),
+        Transmog({item = 88864, slot = L['plate']}),
+        Transmog({item = 88865, slot = L['plate']}),
+        Transmog({item = 88866, slot = L['mail']}),
+        Transmog({item = 88867, slot = L['mail']}),
+        Transmog({item = 88868, slot = L['leather']}),
+        Transmog({item = 88876, slot = L['leather']}),
+        Transmog({item = 88877, slot = L['cloth']}),
+        Transmog({item = 88878, slot = L['cloth']}),
+        Transmog({item = 88879, slot = L['plate']}),
+        Transmog({item = 88880, slot = L['plate']}),
+        Transmog({item = 88881, slot = L['plate']}),
+        Transmog({item = 88882, slot = L['mail']}),
+        Transmog({item = 88883, slot = L['mail']}),
+        Transmog({item = 88884, slot = L['leather']}),
+        Transmog({item = 88885, slot = L['leather']}),
+        Transmog({item = 88892, slot = L['cloth']}),
+        Transmog({item = 88893, slot = L['cloth']}),
+        Transmog({item = 89532, slot = L['cloak']}),
+        Transmog({item = 89533, slot = L['cloak']}),
+        Transmog({item = 89534, slot = L['cloak']}),
+        Transmog({item = 89535, slot = L['cloak']}),
+        Transmog({item = 89537, slot = L['cloak']}),
+        Transmog({item = 89658, slot = L['cloth']}),
+        Transmog({item = 89659, slot = L['cloth']}),
+        Transmog({item = 89664, slot = L['plate']}),
+        Transmog({item = 89665, slot = L['plate']}),
+        Transmog({item = 89666, slot = L['leather']}),
+        Transmog({item = 89667, slot = L['leather']}),
+        Transmog({item = 89668, slot = L['mail']}),
+        Transmog({item = 89669, slot = L['mail']}),
+        Transmog({item = 89799, slot = L['tabard']}),
+        Recipe({item = 84557, profession = P.ENCHANTING}),
+        Recipe({item = 84559, profession = P.ENCHANTING}),
+        Recipe({item = 84561, profession = P.ENCHANTING}),
+        Recipe({item = 86377, profession = P.TAILORING}),
+        Mount({item = 89304, id = 504})
+    },
+    faction = 'Horde'
+})
 
-map.nodes[63232207] = Vendor({id = 59908, rewards = {}})
+map.nodes[63232207] = Vendor({
+    id = 59908,
+    rewards = {
+        Transmog({item = 89339, slot = L['cloth']}),
+        Transmog({item = 89340, slot = L['cloth']}),
+        Transmog({item = 89341, slot = L['leather']}),
+        Transmog({item = 89342, slot = L['leather']}),
+        Transmog({item = 89343, slot = L['mail']}),
+        Transmog({item = 89344, slot = L['mail']}),
+        Transmog({item = 89345, slot = L['plate']}),
+        Transmog({item = 89346, slot = L['plate']}),
+        Transmog({item = 89347, slot = L['plate']}),
+        Transmog({item = 89420, slot = L['plate']}),
+        Transmog({item = 89421, slot = L['plate']}),
+        Transmog({item = 89423, slot = L['plate']}),
+        Transmog({item = 89429, slot = L['mail']}),
+        Transmog({item = 89430, slot = L['mail']}),
+        Transmog({item = 89431, slot = L['leather']}),
+        Transmog({item = 89432, slot = L['leather']}),
+        Transmog({item = 89433, slot = L['cloth']}),
+        Transmog({item = 89434, slot = L['cloth']}),
+        Transmog({item = 89527, slot = L['amulet']}),
+        Transmog({item = 89528, slot = L['amulet']}),
+        Transmog({item = 89529, slot = L['amulet']}),
+        Transmog({item = 89530, slot = L['amulet']}),
+        Transmog({item = 89531, slot = L['amulet']}),
+        Transmog({item = 89642, slot = L['cloth']}),
+        Transmog({item = 89643, slot = L['cloth']}),
+        Transmog({item = 89648, slot = L['plate']}),
+        Transmog({item = 89649, slot = L['plate']}),
+        Transmog({item = 89652, slot = L['leather']}),
+        Transmog({item = 89653, slot = L['leather']}),
+        Transmog({item = 89662, slot = L['mail']}),
+        Transmog({item = 89663, slot = L['mail']}),
+        Transmog({item = 89797, slot = L['tabard']}),
+        Recipe({item = 86235, profession = P.LEATHERWORKING}),
+        Recipe({item = 86237, profession = P.LEATHERWORKING}),
+        Recipe({item = 86273, profession = P.LEATHERWORKING}),
+        Recipe({item = 86274, profession = P.LEATHERWORKING}),
+        Recipe({item = 86275, profession = P.LEATHERWORKING}),
+        Recipe({item = 86276, profession = P.LEATHERWORKING}),
+        Recipe({item = 86277, profession = P.LEATHERWORKING}),
+        Recipe({item = 86278, profession = P.LEATHERWORKING}),
+        Recipe({item = 86295, profession = P.LEATHERWORKING}),
+        Recipe({item = 86308, profession = P.LEATHERWORKING}),
+        Recipe({item = 86309, profession = P.LEATHERWORKING}),
+        Recipe({item = 86368, profession = P.TAILORING}),
+        Recipe({item = 86369, profession = P.TAILORING}),
+        Recipe({item = 86370, profession = P.TAILORING}),
+        Recipe({item = 86371, profession = P.TAILORING}),
+        Recipe({item = 86375, profession = P.TAILORING}),
+        Recipe({item = 86376, profession = P.TAILORING}),
+        Mount({item = 87781, id = 479}), Mount({item = 87782, id = 480}),
+        Mount({item = 87783, id = 481})
+    },
+    faction = 'Horde'
+})
 
 H2.nodes[43787346] = Vendor({
     id = 73674,
@@ -548,7 +655,7 @@ H.nodes[25804390] = Trainer.Blacksmithing({id = 16669, faction = 'Horde'})
 H.nodes[61004185] = Trainer.Engineering({id = 64924, faction = 'Horde'})
 
 -------------------------------------------------------------------------------
----------------------- SHRINE OF SEVEN STARS (ALLIAMCE) -----------------------
+---------------------- SHRINE OF SEVEN STARS (ALLIANCE) -----------------------
 -------------------------------------------------------------------------------
 
 map.nodes[87136385] = Mailbox()
