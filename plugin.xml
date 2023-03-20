@@ -2,22 +2,23 @@
   <Script file="common.lua"/>
 
   <Script file="zones\orgrimmar.lua"/>
+  <Script file="zones\brawlers_guild.lua"/>
+  <Script file="zones\silvermoon.lua"/>
   <Script file="zones\thunderbluff.lua"/>
   <Script file="zones\undercity.lua"/>
-  <Script file="zones\silvermoon.lua"/>
   <Script file="zones\warspear.lua"/>
+  <Script file="zones\zuldazar.lua"/>
 
   <Script file="zones\darnassus.lua"/>
   <Script file="zones\exodar.lua"/>
   <Script file="zones\ironforge.lua"/>
   <Script file="zones\stormwind.lua"/>
   <Script file="zones\stormshield.lua"/>
+  <Script file="zones\boralus.lua"/>
 
-  <Script file="zones\dalaran_legion.lua"/>
-  <Script file="zones\dalaran_wotlk.lua"/>
-  <Script file="zones\brawlers_guild.lua"/>
   <Script file="zones\shattrath.lua"/>
+  <Script file="zones\dalaran_wotlk.lua"/>
   <Script file="zones\vale_of_eternal_blossoms.lua"/>
-  <Script file="zones\zuldazar.lua"/>
+  <Script file="zones\dalaran_legion.lua"/>
   <Script file="zones\valdrakken.lua"/>
 </Ui>
