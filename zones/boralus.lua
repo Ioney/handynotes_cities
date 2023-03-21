@@ -44,7 +44,7 @@ map.nodes[77261631] = ns.node.Node({
     icon = 1044088
 })
 
-map.nodes[77261631] = ns.node.NPC({icon = 1100023}) -- Solo LFR
+map.nodes[74201352] = ns.node.NPC({id = 177193, icon = 1100023}) -- Solo LFR
 
 -------------------------------------------------------------------------------
 ----------------------------------- VENDORS -----------------------------------
@@ -66,7 +66,7 @@ map.nodes[66444094] = Vendor({id = 142165, rewards = {}})
 
 map.nodes[66053231] = Vendor({id = 148922, rewards = {}})
 
-map.nodes[66912578] = Vendor({id = nil, rewards = {}})
+-- map.nodes[66912578] = Vendor({id = nil, rewards = {}})
 
 map.nodes[68962471] = Vendor({id = 135446, rewards = {}})
 
@@ -76,19 +76,19 @@ map.nodes[67512155] = Vendor({id = 135808, rewards = {}})
 ------------------------------- PROFESSION POI --------------------------------
 -------------------------------------------------------------------------------
 
-map.nodes[73460849] = Trainer.BLACKSMITHING({id = 133536, faction = 'Alliance'})
-map.nodes[71201066] = Trainer.COOKING({id = 136052, faction = 'Alliance'})
-map.nodes[73400632] = Trainer.INSCRIPTION({id = 130399, faction = 'Alliance'})
-map.nodes[74210654] = Trainer.ALCHEMY({id = 132228})
-map.nodes[75230756] = Trainer.MINING({id = 136091})
-map.nodes[75200988] = Trainer.JEWELCRAFTING({id = 130368})
-map.nodes[76941116] = Trainer.TAILORING({id = 148228})
-map.nodes[77631433] = Trainer.ENGINEERING({id = 136059})
-map.nodes[75661339] = Trainer.SKINNING({id = 136061})
-map.nodes[75461260] = Trainer.LEATHERWORKING({id = 136063})
-map.nodes[74031155] = Trainer.ENCHANTING({id = 136041})
-map.nodes[71380464] = Trainer.HERBALISM({id = 136096})
-map.nodes[68330847] = Trainer.ARCHAEOLOGY({id = 136106})
+map.nodes[73460849] = Trainer.Blacksmithing({id = 133536, faction = 'Alliance'})
+map.nodes[71201066] = Trainer.Cooking({id = 136052, faction = 'Alliance'})
+map.nodes[73400632] = Trainer.Inscription({id = 130399, faction = 'Alliance'})
+map.nodes[74210654] = Trainer.Alchemy({id = 132228})
+map.nodes[75230756] = Trainer.Mining({id = 136091})
+map.nodes[75200988] = Trainer.Jewelcrafting({id = 130368})
+map.nodes[76941116] = Trainer.Tailoring({id = 148228})
+map.nodes[77631433] = Trainer.Engineering({id = 136059})
+map.nodes[75661339] = Trainer.Skinning({id = 136061})
+map.nodes[75461260] = Trainer.Leatherworking({id = 136063})
+map.nodes[74031155] = Trainer.Enchanting({id = 136041})
+map.nodes[71380464] = Trainer.Herbalism({id = 136096})
+map.nodes[68330847] = Trainer.Archaeology({id = 136106})
 
 map.nodes[56282720] = Vendor({id = 161565, rewards = {}})
 
