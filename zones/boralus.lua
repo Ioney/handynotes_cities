@@ -22,11 +22,7 @@ local map = Map({id = 1161, settings = true})
 map.nodes[56962671] = Mailbox()
 map.nodes[73761411] = Mailbox()
 
-map.nodes[56222568] = Innkeeper({
-    id = 143560,
-    rewards = {}, -- TODO vendor -- TODO
-    faction = 'Alliance'
-})
+map.nodes[56222568] = Innkeeper({id = 143560, faction = 'Alliance'})
 map.nodes[74131265] = Innkeeper({id = 135153, faction = 'Alliance'})
 
 -- map.nodes[0000] = Banker({id = 63964, faction = 'Alliance'})
@@ -42,22 +38,91 @@ map.nodes[71121619] = ns.node.PortalTrainer({id = 144310})
 -------------------------------------------------------------------------------
 ----------------------------------- VENDORS -----------------------------------
 -------------------------------------------------------------------------------
-map.nodes[76911152] = Vendor({id = 148228, rewards = {}}) -- TODO
+map.nodes[76911152] = Vendor({
+    id = 148228,
+    rewards = {
+        Transmog({item = 42360, slot = L['shirt']}),
+        Transmog({item = 42361, slot = L['shirt']}),
+        Transmog({item = 42363, slot = L['shirt']}),
+        Transmog({item = 42365, slot = L['shirt']}),
+        Transmog({item = 42368, slot = L['shirt']}),
+        Transmog({item = 42369, slot = L['shirt']}),
+        Transmog({item = 42370, slot = L['shirt']}),
+        Transmog({item = 42371, slot = L['shirt']}),
+        Transmog({item = 42372, slot = L['shirt']}),
+        Transmog({item = 42373, slot = L['shirt']}),
+        Transmog({item = 42374, slot = L['shirt']}),
+        Transmog({item = 42375, slot = L['shirt']}),
+        Transmog({item = 42376, slot = L['shirt']}),
+        Transmog({item = 42377, slot = L['shirt']}),
+        Transmog({item = 42378, slot = L['shirt']}),
+        Transmog({item = 53852, slot = L['shirt']})
+    }
+})
 
 map.nodes[59972249] = Vendor({
     id = 141009,
     rewards = {Pet({item = 11023, id = 52})}
 })
 
-map.nodes[56774707] = Vendor({id = 142691, rewards = {}}) -- TODO
+map.nodes[56774707] = Vendor({
+    id = 142691,
+    rewards = {
+        Mount({item = 163589, id = 1179}), Pet({item = 163568, id = 2430})
+    }
+})
 
-map.nodes[50934594] = Vendor({id = 142065, rewards = {}}) -- TODO
+map.nodes[50934594] = Vendor({
+    id = 142065,
+    rewards = {Pet({item = 163495, id = 2409}), Pet({item = 163496, id = 2410})}
+})
 
-map.nodes[50674965] = Vendor({id = 137431, rewards = {}}) -- TODO
+map.nodes[50674965] = Vendor({
+    id = 137431,
+    rewards = {
+        Transmog({item = 927, slot = L['1h_axe']}),
+        Transmog({item = 2028, slot = L['1h_mace']}),
+        Transmog({item = 2027, slot = L['1h_sword']}),
+        Transmog({item = 851, slot = L['1h_sword']}),
+        Transmog({item = 15905, slot = L['fist']}),
+        Transmog({item = 852, slot = L['1h_mace']}),
+        Transmog({item = 2130, slot = L['1h_mace']}),
+        Transmog({item = 2131, slot = L['1h_sword']}),
+        Transmog({item = 2134, slot = L['1h_axe']}),
+        Transmog({item = 2139, slot = L['dagger']})
+    }
+})
 
-map.nodes[66444094] = Vendor({id = 142165, rewards = {}}) -- TODO
+map.nodes[66444094] = Vendor({
+    id = 142165,
+    rewards = {
+        Transmog({item = 1364, slot = L['leather']}),
+        Transmog({item = 1367, slot = L['leather']}),
+        Transmog({item = 1368, slot = L['leather']}),
+        Transmog({item = 1369, slot = L['leather']}),
+        Transmog({item = 1370, slot = L['leather']}),
+        Transmog({item = 1372, slot = L['cloak']}),
+        Transmog({item = 1374, slot = L['cloth']}),
+        Transmog({item = 1376, slot = L['cloak']}),
+        Transmog({item = 1377, slot = L['cloth']}),
+        Transmog({item = 1380, slot = L['cloth']}),
+        Transmog({item = 3363, slot = L['cloth']}),
+        Transmog({item = 3365, slot = L['cloth']}),
+        Transmog({item = 1366, slot = L['leather']}),
+        Transmog({item = 1378, slot = L['cloth']})
+    }
+})
 
-map.nodes[66053231] = Vendor({id = 148922, rewards = {}}) -- TODO
+map.nodes[66053231] = Vendor({
+    id = 148922,
+    rewards = {
+        Mount({item = 166745, id = 1042}), Mount({item = 166471, id = 1208}),
+        Transmog({item = 160286, slot = L['cosmetic']}),
+        Transmog({item = 160289, slot = L['cosmetic']}),
+        Transmog({item = 160290, slot = L['cosmetic']}),
+        Pet({item = 166491, id = 2555}), Pet({item = 166500, id = 2562})
+    }
+}) -- TODO
 
 -- map.nodes[66912578] = Vendor({id = nil, rewards = {}}) -- TODO
 
