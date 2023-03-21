@@ -1,6 +1,3 @@
--------------------------------------------------------------------------------
----------------------------------- NAMESPACE ----------------------------------
--------------------------------------------------------------------------------
 local ADDON_NAME, ns = ...
 local L = ns.locale
 local Map = ns.Map
@@ -30,15 +27,23 @@ map.nodes[68483971] = Mailbox()
 map.nodes[77815094] = Mailbox()
 map.nodes[64562519] = Mailbox()
 
-map.nodes[44183389] = ns.node.Flightmaster({id = 86049})
-
 map.nodes[44964319] = Innkeeper({id = 86307})
 
+map.nodes[51416159] = Banker()
+
+map.nodes[54062532] = Auctioneer({id = 86635})
+map.nodes[54912471] = Auctioneer({id = 88128})
+map.nodes[55332598] = Auctioneer({id = 88130})
+
+map.nodes[44183389] = ns.node.Flightmaster({id = 86049})
 map.nodes[77445951] = ns.node.Stablemaster({id = 86052})
 map.nodes[58605294] = ns.node.Transmogrifier({id = 86395})
 map.nodes[59235352] = ns.node.Voidstorage({id = 86396})
 map.nodes[59235021] = ns.node.PortalTrainer({id = 88255})
-map.nodes[51416159] = Banker()
+
+-------------------------------------------------------------------------------
+------------------------------------ VENDORS ----------------------------------
+-------------------------------------------------------------------------------
 
 map.nodes[53465977] = Vendor({
     id = 86037,
@@ -230,9 +235,9 @@ map.nodes[42583641] = Vendor({
     }
 })
 
-map.nodes[54062532] = Auctioneer({id = 86635})
-map.nodes[54912471] = Auctioneer({id = 88128})
-map.nodes[55332598] = Auctioneer({id = 88130})
+-------------------------------------------------------------------------------
+------------------------------ PROFESSION TRAINERS ----------------------------
+-------------------------------------------------------------------------------
 
 map.nodes[45654479] = Trainer.Cooking({id = 86029})
 map.nodes[49482787] = Trainer.Leatherworking({id = 86032})

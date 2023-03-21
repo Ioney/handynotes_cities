@@ -15,7 +15,7 @@ local Vendor = ns.node.Vendor
 local Trainer = ns.node.Trainer
 
 -- local Path = ns.poi.Path
--------------------------------------------------------------------------------
+------------------------------------- MAPS ------------------------------------
 local map = Map({id = 1161, settings = true})
 -------------------------------------------------------------------------------
 
@@ -24,10 +24,14 @@ map.nodes[73761411] = Mailbox()
 
 map.nodes[56222568] = Innkeeper({
     id = 143560,
-    rewards = {}, -- vendor
+    rewards = {}, -- TODO vendor -- TODO
     faction = 'Alliance'
 })
 map.nodes[74131265] = Innkeeper({id = 135153, faction = 'Alliance'})
+
+-- map.nodes[0000] = Banker({id = 63964, faction = 'Alliance'})
+-- map.nodes[0000] = Banker({id = 63965, faction = 'Alliance'})
+-- map.nodes[0000] = Banker({id = 63966, faction = 'Alliance'})
 
 map.nodes[69601315] = ns.node.Stablemaster({id = 142073, faction = 'Alliance'})
 map.nodes[71851336] = ns.node
@@ -35,42 +39,35 @@ map.nodes[71851336] = ns.node
 -- map.nodes[0000] = ns.node.Voidstorage({id = 67013, faction = 'Alliance'})
 map.nodes[71121619] = ns.node.PortalTrainer({id = 144310})
 
--- map.nodes[0000] = Banker({id = 63964, faction = 'Alliance'})
--- map.nodes[0000] = Banker({id = 63965, faction = 'Alliance'})
--- map.nodes[0000] = Banker({id = 63966, faction = 'Alliance'})
-
-map.nodes[77261631] = ns.node.Node({
-    label = L['scrap_o_matic_1000'],
-    icon = 1044088
-})
-
-map.nodes[74201352] = ns.node.NPC({id = 177193, icon = 1100023}) -- Solo LFR
-
 -------------------------------------------------------------------------------
 ----------------------------------- VENDORS -----------------------------------
 -------------------------------------------------------------------------------
-map.nodes[76911152] = Vendor({id = 148228, rewards = {}})
+map.nodes[76911152] = Vendor({id = 148228, rewards = {}}) -- TODO
 
 map.nodes[59972249] = Vendor({
     id = 141009,
     rewards = {Pet({item = 11023, id = 52})}
 })
 
-map.nodes[56774707] = Vendor({id = 142691, rewards = {}})
+map.nodes[56774707] = Vendor({id = 142691, rewards = {}}) -- TODO
 
-map.nodes[50934594] = Vendor({id = 142065, rewards = {}})
+map.nodes[50934594] = Vendor({id = 142065, rewards = {}}) -- TODO
 
-map.nodes[50674965] = Vendor({id = 137431, rewards = {}})
+map.nodes[50674965] = Vendor({id = 137431, rewards = {}}) -- TODO
 
-map.nodes[66444094] = Vendor({id = 142165, rewards = {}})
+map.nodes[66444094] = Vendor({id = 142165, rewards = {}}) -- TODO
 
-map.nodes[66053231] = Vendor({id = 148922, rewards = {}})
+map.nodes[66053231] = Vendor({id = 148922, rewards = {}}) -- TODO
 
--- map.nodes[66912578] = Vendor({id = nil, rewards = {}})
+-- map.nodes[66912578] = Vendor({id = nil, rewards = {}}) -- TODO
 
-map.nodes[68962471] = Vendor({id = 135446, rewards = {}})
+map.nodes[68962471] = Vendor({id = 135446, rewards = {}}) -- TODO
 
-map.nodes[67512155] = Vendor({id = 135808, rewards = {}})
+map.nodes[67512155] = Vendor({id = 135808, rewards = {}}) -- TODO
+
+map.nodes[56282720] = Vendor({id = 161565, rewards = {}}) -- TODO
+
+map.nodes[55962677] = Vendor({id = 142564, rewards = {}}) -- TODO
 
 -------------------------------------------------------------------------------
 ------------------------------- PROFESSION POI --------------------------------
@@ -90,6 +87,13 @@ map.nodes[74031155] = Trainer.Enchanting({id = 136041})
 map.nodes[71380464] = Trainer.Herbalism({id = 136096})
 map.nodes[68330847] = Trainer.Archaeology({id = 136106})
 
-map.nodes[56282720] = Vendor({id = 161565, rewards = {}})
+-------------------------------------------------------------------------------
+--------------------------------- MISCELLANEOUS -------------------------------
+-------------------------------------------------------------------------------
 
-map.nodes[55962677] = Vendor({id = 142564, rewards = {}})
+map.nodes[77261631] = ns.node.Node({
+    label = L['scrap_o_matic_1000'],
+    icon = 1044088
+})
+
+map.nodes[74201352] = ns.node.NPC({id = 177193, icon = 1100023}) -- Solo LFR

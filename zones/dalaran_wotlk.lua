@@ -1,6 +1,3 @@
--------------------------------------------------------------------------------
----------------------------------- NAMESPACE ----------------------------------
--------------------------------------------------------------------------------
 local ADDON_NAME, ns = ...
 local L = ns.locale
 local Map = ns.Map
@@ -18,10 +15,8 @@ local Innkeeper = ns.node.Innkeeper
 local Mailbox = ns.node.Mailbox
 local Trainer = ns.node.Trainer
 local Vendor = ns.node.Vendor
-
--------------------------------------------------------------------------------
-local map = Map({id = 125, settings = true})
-local udb = Map({id = 126, settings = true})
+------------------------------------- MAPS ------------------------------------
+local udb = Map({id = 126, settings = true}) -- The Underbelly (Sewers)
 -------------------------------------------------------------------------------
 
 map.nodes[37226007] = Mailbox({faction = 'Alliance'})
@@ -44,8 +39,6 @@ map.nodes[65643216] = Innkeeper({id = 31557, faction = 'Horde'})
 map.nodes[50253952] = Innkeeper({id = 28687})
 udb.nodes[35475756] = Innkeeper({id = 29532})
 
-map.nodes[59633742] = ns.node.Stablemaster({id = 28690})
-
 map.nodes[42237933] = Banker({id = 30607})
 map.nodes[43048002] = Banker({id = 30605})
 map.nodes[43938056] = Banker({id = 30604})
@@ -58,26 +51,12 @@ map.nodes[38522511] = Auctioneer({id = 35607})
 map.nodes[65522347] = Auctioneer({id = 35607})
 map.nodes[37075479] = Auctioneer({id = 35594})
 
+map.nodes[59633742] = ns.node.Stablemaster({id = 28690})
 map.nodes[52283155] = ns.node.Barber({id = 28708})
 
--- PROFESSIONS
-
-map.nodes[42683205] = Trainer.Alchemy({id = 28703})
-map.nodes[48363820] = Trainer.Archaeology({id = 47579})
-map.nodes[45312768] = Trainer.Blacksmithing({id = 28694})
-map.nodes[69983899] = Trainer.Cooking({id = 29631, faction = 'Horde'})
-map.nodes[40256610] = Trainer.Cooking({id = 28705, faction = 'Alliance'})
-map.nodes[39053981] = Trainer.Enchanting({id = 28693})
-map.nodes[38492584] = Trainer.Engineering({id = 28697})
-map.nodes[53066495] = Trainer.Fishing({id = 28742})
-map.nodes[42923410] = Trainer.Herbalism({id = 28704})
-map.nodes[41603719] = Trainer.Inscription({id = 28702})
-map.nodes[40683534] = Trainer.Jewelcrafting({id = 28701})
-map.nodes[34692875] = Trainer.Leatherworking({id = 28700})
-map.nodes[41472567] = Trainer.Mining({id = 28698})
-map.nodes[34812806] = Trainer.Skinning({id = 28696})
-map.nodes[36153355] = Trainer.Tailoring({id = 28699})
--- map.nodes[36573733] = Trainer.FirstAid({prof = 0, id = 0})
+-------------------------------------------------------------------------------
+------------------------------------ VENDORS ----------------------------------
+-------------------------------------------------------------------------------
 
 map.nodes[58124207] = Vendor({
     id = 32216,
@@ -733,7 +712,28 @@ udb.nodes[60021152] = Vendor({
 })
 
 -------------------------------------------------------------------------------
------------------------------------- MISC -------------------------------------
+------------------------------ PROFESSION TRAINERS ----------------------------
+-------------------------------------------------------------------------------
+
+map.nodes[42683205] = Trainer.Alchemy({id = 28703})
+map.nodes[48363820] = Trainer.Archaeology({id = 47579})
+map.nodes[45312768] = Trainer.Blacksmithing({id = 28694})
+map.nodes[69983899] = Trainer.Cooking({id = 29631, faction = 'Horde'})
+map.nodes[40256610] = Trainer.Cooking({id = 28705, faction = 'Alliance'})
+map.nodes[39053981] = Trainer.Enchanting({id = 28693})
+map.nodes[38492584] = Trainer.Engineering({id = 28697})
+map.nodes[53066495] = Trainer.Fishing({id = 28742})
+map.nodes[42923410] = Trainer.Herbalism({id = 28704})
+map.nodes[41603719] = Trainer.Inscription({id = 28702})
+map.nodes[40683534] = Trainer.Jewelcrafting({id = 28701})
+map.nodes[34692875] = Trainer.Leatherworking({id = 28700})
+map.nodes[41472567] = Trainer.Mining({id = 28698})
+map.nodes[34812806] = Trainer.Skinning({id = 28696})
+map.nodes[36153355] = Trainer.Tailoring({id = 28699})
+-- map.nodes[36573733] = Trainer.FirstAid({prof = 0, id = 0})
+
+-------------------------------------------------------------------------------
+--------------------------------- MISCELLANEOUS -------------------------------
 -------------------------------------------------------------------------------
 
 local to_underbelly = ns.node.Node({

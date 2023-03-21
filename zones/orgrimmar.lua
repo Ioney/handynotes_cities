@@ -1,6 +1,3 @@
--------------------------------------------------------------------------------
----------------------------------- NAMESPACE ----------------------------------
--------------------------------------------------------------------------------
 local ADDON_NAME, ns = ...
 local L = ns.locale
 local Map = ns.Map
@@ -76,6 +73,11 @@ map.nodes[62133528] = ns.node.Stablemaster({id = 31757})
 map.nodes[37948715] = ns.node.Stablemaster({id = 133108})
 map.nodes[32426475] = ns.node.Stablemaster({id = 9988})
 map.nodes[39334925] = ns.node.Stablemaster({id = 44788})
+map.nodes[57159128] = ns.node.PortalTrainer({id = 47253})
+
+-------------------------------------------------------------------------------
+------------------------------------ VENDORS ----------------------------------
+-------------------------------------------------------------------------------
 
 map.nodes[58725586] = Vendor({
     id = 52809,
@@ -378,11 +380,11 @@ map.nodes[48167176] = Vendor({
         Transmog({item = 65273, slot = L['plate']})
     }
 })
-map.nodes[48437177] = Vendor({id = 46555, rewards = {}})
-map.nodes[48697155] = Vendor({id = 46556, rewards = {}})
-map.nodes[46447951] = Vendor({id = 5188, rewards = {}})
+map.nodes[48437177] = Vendor({id = 46555, rewards = {}}) -- TODO
+map.nodes[48697155] = Vendor({id = 46556, rewards = {}}) -- TODO
+map.nodes[46447951] = Vendor({id = 5188, rewards = {}}) -- TODO
 
-map.nodes[47138003] = Vendor({id = 46572, rewards = {}})
+map.nodes[47138003] = Vendor({id = 46572, rewards = {}}) -- TODO
 
 map.nodes[40896118] = Vendor({
     id = 179897,
@@ -458,13 +460,11 @@ map.nodes[47975863] = Vendor({
     }
 })
 
-map.nodes[41817318] = Vendor({id = 73151, rewards = {}})
-map.nodes[41747283] = Vendor({id = 12796, rewards = {}})
+map.nodes[41817318] = Vendor({id = 73151, rewards = {}}) -- TODO
+map.nodes[41747283] = Vendor({id = 12796, rewards = {}}) -- TODO
 
-map.nodes[69844117] = Vendor({id = 66022, rewards = {}})
-map.nodes[38067808] = Vendor({id = 48510, rewards = {}})
-
-map.nodes[57159128] = ns.node.PortalTrainer({id = 47253})
+map.nodes[69844117] = Vendor({id = 66022, rewards = {}}) -- TODO
+map.nodes[38067808] = Vendor({id = 48510, rewards = {}}) -- TODO
 
 -------------------------------------------------------------------------------
 ----------------------------- PROFESSION TRAINERS -----------------------------

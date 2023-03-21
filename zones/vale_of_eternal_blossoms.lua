@@ -22,7 +22,6 @@ local H = Map({id = 391, settings = true}) -- Shrine of Two Moons
 local H2 = Map({id = 392, settings = true}) -- Shrine of Two Moons - Upstairs
 local A = Map({id = 393, settings = true}) -- Shrine of Seven Stars
 local A2 = Map({id = 394, settings = true}) -- Shrine of Seven Stars - Upstairs
-
 -------------------------------------------------------------------------------
 
 H.nodes[67035212] = Mailbox()
@@ -37,17 +36,18 @@ H2.nodes[39157954] = Mailbox()
 H.nodes[68404767] = Innkeeper({id = 62996, faction = 'Horde'})
 H2.nodes[60277699] = Innkeeper({id = 16618, faction = 'Horde'})
 
-map.nodes[60282278] = ns.node.Stablemaster({id = 63986, faction = 'Horde'})
-H2.nodes[59141805] = ns.node.Transmogrifier({id = 67014, faction = 'Horde'})
-H2.nodes[64121698] = ns.node.Voidstorage({id = 67013, faction = 'Horde'})
-
 H2.nodes[22305467] = Banker({id = 63964, faction = 'Horde'})
 H2.nodes[22006200] = Banker({id = 63965, faction = 'Horde'})
 H2.nodes[20844794] = Banker({id = 63966, faction = 'Horde'})
 
+map.nodes[60282278] = ns.node.Stablemaster({id = 63986, faction = 'Horde'})
+H2.nodes[59141805] = ns.node.Transmogrifier({id = 67014, faction = 'Horde'})
+H2.nodes[64121698] = ns.node.Voidstorage({id = 67013, faction = 'Horde'})
+
 -------------------------------------------------------------------------------
 ----------------------------------- VENDORS -----------------------------------
 -------------------------------------------------------------------------------
+
 map.nodes[62792338] = Vendor({
     id = 64001,
     rewards = {
@@ -648,7 +648,7 @@ H2.nodes[44448127] = Vendor({
 })
 
 -------------------------------------------------------------------------------
-------------------------------- PROFESSION POI --------------------------------
+------------------------------ PROFESSION TRAINERS ----------------------------
 -------------------------------------------------------------------------------
 
 H.nodes[25804390] = Trainer.Blacksmithing({id = 16669, faction = 'Horde'})
@@ -677,14 +677,14 @@ A2.nodes[45496679] = Banker({id = 63967, faction = 'Alliance'})
 A2.nodes[45906764] = Banker({id = 64024, faction = 'Alliance'})
 A2.nodes[46486807] = Banker({id = 63970, faction = 'Alliance'})
 
-A2.nodes[56418531] = ns.node.Transmogrifier({id = 64573, faction = 'Alliance'})
-A2.nodes[53058936] = ns.node.Voidstorage({id = 64574, faction = 'Alliance'})
-
 A.nodes[57045254] = ns.node.Auctioneer({
     id = 65599,
     profession = ns.PROFESSION.ENGINEER,
     faction = 'Alliance'
 })
+
+A2.nodes[56418531] = ns.node.Transmogrifier({id = 64573, faction = 'Alliance'})
+A2.nodes[53058936] = ns.node.Voidstorage({id = 64574, faction = 'Alliance'})
 
 -------------------------------------------------------------------------------
 ----------------------------------- VENDORS -----------------------------------
@@ -1392,5 +1392,5 @@ map.nodes[84626382] = Vendor({
 })
 
 -------------------------------------------------------------------------------
-------------------------------- PROFESSION POI --------------------------------
+------------------------------ PROFESSION TRAINER -----------------------------
 -------------------------------------------------------------------------------

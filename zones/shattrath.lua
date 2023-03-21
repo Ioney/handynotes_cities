@@ -1,6 +1,3 @@
--------------------------------------------------------------------------------
----------------------------------- NAMESPACE ----------------------------------
--------------------------------------------------------------------------------
 local ADDON_NAME, ns = ...
 local L = ns.locale
 local P = ns.PROFESSION
@@ -36,9 +33,6 @@ map.nodes[74754858] = Mailbox()
 map.nodes[56328154] = Innkeeper({id = 19232, rlabel = L['scryers']})
 map.nodes[28284936] = Innkeeper({id = 19046, rlabel = L['aldor']})
 
-map.nodes[55978002] = ns.node.Stablemaster({id = 21517, rlabel = L['scryers']})
-map.nodes[28594774] = ns.node.Stablemaster({id = 21518, rlabel = L['aldor']})
-
 map.nodes[60046046] = Banker({id = 19338, rlabel = L['scryers']})
 map.nodes[60356030] = Banker({id = 19246, rlabel = L['scryers']})
 map.nodes[47802944] = Banker({id = 19034, rlabel = L['aldor']})
@@ -48,6 +42,9 @@ map.nodes[56756237] = Auctioneer({id = 50140, rlabel = L['scryers']})
 -- map.nodes[56986315] = Auctioneer({id = 50139, rlabel= L['scryers']}) -- seems bugged, not clickable
 map.nodes[51062651] = Auctioneer({id = 50143, rlabel = L['aldor']})
 map.nodes[51372739] = Auctioneer({id = 50145, rlabel = L['aldor']})
+
+map.nodes[55978002] = ns.node.Stablemaster({id = 21517, rlabel = L['scryers']})
+map.nodes[28594774] = ns.node.Stablemaster({id = 21518, rlabel = L['aldor']})
 
 -------------------------------------------------------------------------------
 ----------------------------------- VENDORS -----------------------------------

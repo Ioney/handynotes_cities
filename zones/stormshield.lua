@@ -1,6 +1,3 @@
--------------------------------------------------------------------------------
----------------------------------- NAMESPACE ----------------------------------
--------------------------------------------------------------------------------
 local ADDON_NAME, ns = ...
 local L = ns.locale
 local Map = ns.Map
@@ -31,14 +28,7 @@ map.nodes[43056906] = Mailbox()
 map.nodes[35457240] = Mailbox()
 map.nodes[64012279] = Mailbox()
 
-map.nodes[30594844] = ns.node.Flightmaster({id = 85959})
-
 map.nodes[35727790] = Innkeeper({id = 85956})
-
-map.nodes[33346485] = ns.node.Stablemaster({id = 85963})
-map.nodes[63143535] = ns.node.Transmogrifier({id = 85961})
-map.nodes[63043601] = ns.node.Voidstorage({id = 85962})
-map.nodes[63943579] = ns.node.PortalTrainer({id = 88254})
 
 map.nodes[55624853] = Banker({id = 85957})
 map.nodes[55374897] = Banker({id = 88471})
@@ -49,6 +39,12 @@ map.nodes[53446795] = Auctioneer({id = 88520})
 map.nodes[54766771] = Auctioneer({id = 88522})
 map.nodes[54146428] = Auctioneer({id = 85964})
 map.nodes[53766431] = Auctioneer({id = 56733})
+
+map.nodes[30594844] = ns.node.Flightmaster({id = 85959})
+map.nodes[33346485] = ns.node.Stablemaster({id = 85963})
+map.nodes[63143535] = ns.node.Transmogrifier({id = 85961})
+map.nodes[63043601] = ns.node.Voidstorage({id = 85962})
+map.nodes[63943579] = ns.node.PortalTrainer({id = 88254})
 
 -------------------------------------------------------------------------------
 ----------------------------------- VENDORS -----------------------------------
@@ -246,8 +242,24 @@ map.nodes[46627676] = Vendor({
     }
 }) -- Council of Exarchs Quartermaster
 
+map.nodes[51303625] = Vendor({id = 87049, rewards = {}}) -- TODO
+
+map.nodes[44133777] = Vendor({id = 87052, rewards = {}}) -- TODO
+
+map.nodes[47873985] = Vendor({id = 87065, rewards = {}}) -- TODO
+
+map.nodes[48974879] = Vendor({id = 87062, rewards = {}}) -- TODO
+
+map.nodes[52004153] = Vendor({id = 87057, rewards = {}}) -- TODO
+
+map.nodes[56966472] = Vendor({id = 87022, rewards = {}}) -- TODO
+
+map.nodes[36736858] = Vendor({id = 87048, rewards = {}}) -- TODO
+
+map.nodes[61963337] = Vendor({id = 87063, rewards = {}}) -- TODO
+
 -------------------------------------------------------------------------------
------------------------- PROFESSION TRAINERS & VENDORS ------------------------
+------------------------------ PROFESSION TRAINERS ----------------------------
 -------------------------------------------------------------------------------
 
 map.nodes[37086889] = Trainer.Alchemy({id = 85905})
@@ -264,19 +276,3 @@ map.nodes[52524205] = Trainer.Leatherworking({id = 85920})
 map.nodes[47304367] = Trainer.Mining({id = 85919})
 map.nodes[52264329] = Trainer.Skinning({id = 85923})
 map.nodes[51533708] = Trainer.Tailoring({id = 85910})
-
-map.nodes[51303625] = Vendor({id = 87049, rewards = {}})
-
-map.nodes[44133777] = Vendor({id = 87052, rewards = {}})
-
-map.nodes[47873985] = Vendor({id = 87065, rewards = {}})
-
-map.nodes[48974879] = Vendor({id = 87062, rewards = {}})
-
-map.nodes[52004153] = Vendor({id = 87057, rewards = {}})
-
-map.nodes[56966472] = Vendor({id = 87022, rewards = {}})
-
-map.nodes[36736858] = Vendor({id = 87048, rewards = {}})
-
-map.nodes[61963337] = Vendor({id = 87063, rewards = {}})
