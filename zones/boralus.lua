@@ -122,7 +122,7 @@ map.nodes[66053231] = Vendor({
         Transmog({item = 160290, slot = L['cosmetic']}),
         Pet({item = 166491, id = 2555}), Pet({item = 166500, id = 2562})
     }
-}) -- TODO
+})
 
 -- map.nodes[66912578] = Vendor({id = nil, rewards = {}}) -- TODO
 

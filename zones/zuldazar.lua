@@ -18,6 +18,7 @@ local Path = ns.poi.Path
 local POI = ns.poi.POI
 ------------------------------------- MAPS ------------------------------------
 local map = Map({id = 1165, settings = true})
+
 local great_seal = Map({id = 1163, settings = true})
 local great_seal_upstairs = Map({id = 1164, settings = true})
 -------------------------------------------------------------------------------
