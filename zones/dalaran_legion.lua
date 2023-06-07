@@ -1,6 +1,3 @@
--------------------------------------------------------------------------------
----------------------------------- NAMESPACE ----------------------------------
--------------------------------------------------------------------------------
 local ADDON_NAME, ns = ...
 local L = ns.locale
 local Map = ns.Map
@@ -18,10 +15,9 @@ local Transmog = ns.reward.Transmog
 
 local POI = ns.poi.POI
 local Path = ns.poi.Path
-
--------------------------------------------------------------------------------
+------------------------------------- MAPS ------------------------------------
 local map = Map({id = 627, settings = true})
-local udb = Map({id = 628, settings = true}) -- The Underbelly
+local udb = Map({id = 628, settings = true}) -- The Underbelly (Sewers)
 -------------------------------------------------------------------------------
 
 map.nodes[50835884] = ns.node.Mailbox()
@@ -37,11 +33,6 @@ map.nodes[59184890] = ns.node.Mailbox()
 map.nodes[44156839] = ns.node.Mailbox()
 map.nodes[65264609] = ns.node.Mailbox()
 
-map.nodes[59243762] = ns.node.Stablemaster({id = 96507})
-map.nodes[51853164] = ns.node.Barber({id = 96781})
-map.nodes[39234093] = ns.node.Transmogrifier({id = 99867})
-map.nodes[39234093] = ns.node.Voidstorage({id = 85290})
-
 map.nodes[49784017] = ns.node.Innkeeper({id = 96806})
 map.nodes[48534179] = ns.node.Innkeeper({id = 96807})
 map.nodes[65403221] = ns.node.Innkeeper({id = 96796, faction = 'Horde'})
@@ -55,8 +46,13 @@ map.nodes[41707991] = ns.node.Banker({id = 96823})
 map.nodes[42558051] = ns.node.Banker({id = 96821})
 map.nodes[43458107] = ns.node.Banker({id = 96822})
 
+map.nodes[59243762] = ns.node.Stablemaster({id = 96507})
+map.nodes[51853164] = ns.node.Barber({id = 96781})
+map.nodes[39234093] = ns.node.Transmogrifier({id = 99867})
+map.nodes[39234093] = ns.node.Voidstorage({id = 85290})
+
 -------------------------------------------------------------------------------
----------------------------------- TRAINERS -----------------------------------
+------------------------------ PROFESSION TRAINERS ----------------------------
 -------------------------------------------------------------------------------
 
 map.nodes[69993900] = Trainer.Cooking({
@@ -67,7 +63,6 @@ map.nodes[69993900] = Trainer.Cooking({
 map.nodes[45202909] = Trainer.Blacksmithing({id = 106655})
 map.nodes[44162873] = Trainer.Blacksmithing({id = 97261})
 map.nodes[46082663] = Trainer.Blacksmithing({id = 93189})
-
 map.nodes[41232641] = Trainer.Archaeology({
     id = 93538,
     pois = {
@@ -76,7 +71,6 @@ map.nodes[41232641] = Trainer.Archaeology({
         })
     }
 })
-
 map.nodes[38842472] = Trainer.Engineering({
     id = 93520,
     note = L['goblin_engineering']
@@ -85,26 +79,18 @@ map.nodes[37902612] = Trainer.Engineering({
     id = 92194,
     note = L['gnome_engineering']
 })
-
 map.nodes[42993334] = Trainer.Herbalism({id = 92464})
 map.nodes[42363390] = Trainer.Herbalism({id = 151827})
-
 map.nodes[41283703] = Trainer.Inscription({id = 92195})
-
 map.nodes[38334039] = Trainer.Enchanting({id = 93531})
-
 map.nodes[36493436] = Trainer.Tailoring({id = 93525})
 map.nodes[34993459] = Trainer.Tailoring({id = 93542})
-
 map.nodes[35423029] = Trainer.Leatherworking({id = 93522})
 map.nodes[35072940] = Trainer.Leatherworking({id = 93523})
 map.nodes[34292865] = Trainer.Leatherworking({id = 98931})
-
 map.nodes[36062796] = Trainer.Skinning({id = 93541})
-
 map.nodes[42023177] = Trainer.Alchemy({id = 92456})
 map.nodes[41303339] = Trainer.Alchemy({id = 92458})
-
 map.nodes[52826559] = Trainer.Fishing({id = 95844})
 
 -------------------------------------------------------------------------------
@@ -805,17 +791,18 @@ map.nodes[71373211] = Vendor({
     }
 })
 
-map.nodes[60175188] = Vendor({id = 96779, repair = true})
-map.nodes[60565228] = Vendor({id = 96778, repair = true})
-map.nodes[51267167] = Vendor({id = 96978, repair = true})
-map.nodes[51827318] = Vendor({id = 96980, repair = true})
-map.nodes[37735688] = Vendor({id = 96976, repair = true})
-udb.nodes[65935282] = Vendor({id = 102193, repair = true})
-udb.nodes[68975838] = Vendor({id = 97359, repair = true})
+map.nodes[60175188] = Vendor({id = 96779, repair = true}) -- TODO
+map.nodes[60565228] = Vendor({id = 96778, repair = true}) -- TODO
+map.nodes[51267167] = Vendor({id = 96978, repair = true}) -- TODO
+map.nodes[51827318] = Vendor({id = 96980, repair = true}) -- TODO
+map.nodes[37735688] = Vendor({id = 96976, repair = true}) -- TODO
+udb.nodes[65935282] = Vendor({id = 102193, repair = true}) -- TODO
+udb.nodes[68975838] = Vendor({id = 97359, repair = true}) -- TODO
 
 -------------------------------------------------------------------------------
------------------------------------- MISC -------------------------------------
+--------------------------------- MISCELLANEOUS -------------------------------
 -------------------------------------------------------------------------------
+
 -- 38424853 Lost Mail
 
 map.nodes[33423162] = ns.node.Node({

@@ -1,6 +1,3 @@
--------------------------------------------------------------------------------
----------------------------------- NAMESPACE ----------------------------------
--------------------------------------------------------------------------------
 local ADDON_NAME, ns = ...
 local L = ns.locale
 local Map = ns.Map
@@ -12,7 +9,6 @@ local Transmog = ns.reward.Transmog
 local Mount = ns.reward.Mount
 local Heirloom = ns.reward.Heirloom
 local Recipe = ns.reward.Recipe
-local Spell = ns.reward.Spell
 
 local Mailbox = ns.node.Mailbox
 local Innkeeper = ns.node.Innkeeper
@@ -23,7 +19,7 @@ local Trainer = ns.node.Trainer
 
 local Path = ns.poi.Path
 local POI = ns.poi.POI
--------------------------------------------------------------------------------
+------------------------------------- MAPS ------------------------------------
 local map = Map({id = 103, settings = true})
 -------------------------------------------------------------------------------
 
@@ -44,6 +40,10 @@ map.nodes[63715871] = Auctioneer({id = 16707, pois = {POI({60925542})}})
 
 map.nodes[60212513] = ns.node.Stablemaster({id = 16764})
 map.nodes[45976270] = ns.node.PortalTrainer({id = 16755})
+
+-------------------------------------------------------------------------------
+------------------------------------ VENDORS ----------------------------------
+-------------------------------------------------------------------------------
 
 map.nodes[30113380] = Vendor({
     id = 21019,
@@ -251,25 +251,6 @@ map.nodes[81495143] = Vendor({
         Mount({item = 29746, id = 165}), Mount({item = 29747, id = 167})
     }
 })
-
--------------------------------------------------------------------------------
------------------------- PROFESSION TRAINERS & VENDORS ------------------------
--------------------------------------------------------------------------------
-
-map.nodes[27776072] = Trainer.Alchemy({id = 16723})
-map.nodes[60609004] = Trainer.Blacksmithing({id = 16724})
-map.nodes[40693871] = Trainer.Enchanting({id = 16725})
-map.nodes[54129287] = Trainer.Engineering({id = 16726})
-map.nodes[27436285] = Trainer.Herbalism({id = 16736})
-map.nodes[39903853] = Trainer.Inscription({id = 30716})
-map.nodes[44892421] = Trainer.Jewelcrafting({id = 19778})
-map.nodes[67517456] = Trainer.Leatherworking({id = 16728})
-map.nodes[59698779] = Trainer.Mining({id = 16752})
-map.nodes[65657457] = Trainer.Skinning({id = 16763})
-map.nodes[64426898] = Trainer.Tailoring({id = 16729})
-map.nodes[33736495] = Trainer.Archaeology({id = 47570})
-map.nodes[55752671] = Trainer.Cooking({id = 16719})
-map.nodes[31971463] = Trainer.Fishing({id = 16774})
 
 map.nodes[45932526] = Vendor({
     id = 17512,
@@ -538,3 +519,22 @@ map.nodes[54452624] = Vendor({
         Recipe({item = 21219, profession = P.COOKING})
     }
 }) -- Cooking Recipes
+
+-------------------------------------------------------------------------------
+------------------------------ PROFESSION TRAINERS ----------------------------
+-------------------------------------------------------------------------------
+
+map.nodes[27776072] = Trainer.Alchemy({id = 16723})
+map.nodes[60609004] = Trainer.Blacksmithing({id = 16724})
+map.nodes[40693871] = Trainer.Enchanting({id = 16725})
+map.nodes[54129287] = Trainer.Engineering({id = 16726})
+map.nodes[27436285] = Trainer.Herbalism({id = 16736})
+map.nodes[39903853] = Trainer.Inscription({id = 30716})
+map.nodes[44892421] = Trainer.Jewelcrafting({id = 19778})
+map.nodes[67517456] = Trainer.Leatherworking({id = 16728})
+map.nodes[59698779] = Trainer.Mining({id = 16752})
+map.nodes[65657457] = Trainer.Skinning({id = 16763})
+map.nodes[64426898] = Trainer.Tailoring({id = 16729})
+map.nodes[33736495] = Trainer.Archaeology({id = 47570})
+map.nodes[55752671] = Trainer.Cooking({id = 16719})
+map.nodes[31971463] = Trainer.Fishing({id = 16774})

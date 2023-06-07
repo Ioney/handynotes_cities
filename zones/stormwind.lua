@@ -1,6 +1,3 @@
--------------------------------------------------------------------------------
----------------------------------- NAMESPACE ----------------------------------
--------------------------------------------------------------------------------
 local ADDON_NAME, ns = ...
 local L = ns.locale
 local Map = ns.Map
@@ -18,7 +15,7 @@ local Vendor = ns.node.Vendor
 local Trainer = ns.node.Trainer
 
 local Path = ns.poi.Path
--------------------------------------------------------------------------------
+------------------------------------- MAPS ------------------------------------
 local map = Map({id = 84, settings = true})
 -------------------------------------------------------------------------------
 
@@ -33,15 +30,18 @@ map.nodes[66626541] = Mailbox()
 
 map.nodes[51749396] = Innkeeper({id = 3628})
 
-map.nodes[61306464] = ns.node.Barber({id = 29142})
-
 map.nodes[0] = Banker()
 
 map.nodes[0] = Auctioneer()
 
+map.nodes[61306464] = ns.node.Barber({id = 29142})
 map.nodes[0] = ns.node.Voidstorage({id = 54472})
 map.nodes[0] = ns.node.Transmogrifier({id = 54473})
 map.nodes[0] = ns.node.Stablemaster({id = 31757})
+
+-------------------------------------------------------------------------------
+------------------------------------ VENDORS ----------------------------------
+-------------------------------------------------------------------------------
 
 map.nodes[10101010] = Vendor({
     id = 58155,
@@ -343,33 +343,3 @@ map.nodes[15151515] = Vendor({
 -- map.nodes[55035050] = Trainer.Archaeology({id = 46741})
 -- map.nodes[55075588] = Trainer.Cooking({id = 46716})
 -- map.nodes[56845656] = Trainer.Fishing({id = 11017})
-
--- 171 trainer_alchemy
--- 164 trainer_blacksmithing
--- 333 trainer_enchanting
--- 202 trainer_engineering
--- 182 trainer_herbalism
--- 773 trainer_inscription
--- 755 trainer_jewelcrafting
--- 165 trainer_leatherworking
--- 186 trainer_mining
--- 393 trainer_skinning
--- 197 trainer_tailoring
--- 794 trainer_archaeology
--- 185 trainer_cooking
--- 356 trainer_fishing
-
--- Alchemy
--- Blacksmithing
--- Enchanting
--- Engineering
--- Herbalism
--- Inscription
--- Jewelcrafting
--- Leatherworking
--- Mining
--- Skinning
--- Tailoring
--- Archaeology
--- Cooking
--- Fishing
