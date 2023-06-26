@@ -12,6 +12,7 @@ L['leather'] = '皮甲'
 L['mail'] = '锁甲'
 L['plate'] = '板甲'
 L['cosmetic'] = '装饰品'
+L['shirt'] = '衬衣'
 
 L['1h_mace'] = '单手锤'
 L['1h_sword'] = '单手剑'
@@ -81,9 +82,9 @@ L['follower_type_follower'] = '追随者'
 L['follower_type_champion'] = '勇士'
 L['follower_type_companion'] = '伙伴'
 
-L['rep_honored'] = nil
-L['rep_revered'] = nil
-L['rep_exalted'] = nil
+L['rep_honored'] = '尊敬'
+L['rep_revered'] = '崇敬'
+L['rep_exalted'] = '崇拜'
 
 -------------------------------------------------------------------------------
 --------------------------------- CONTEXT MENU --------------------------------
@@ -145,13 +146,13 @@ L['options_restore_hidden_nodes_desc'] = '使用右击菜单恢复全部隐藏�
 L['options_rewards_settings'] = '奖励'
 L['options_reward_types'] = '显示奖励类型'
 L['options_mount_rewards'] = '显示坐骑奖励'
-L['options_mount_rewards_desc'] = '在提示和追踪其收集状态显示坐骑奖励。'
+L['options_mount_rewards_desc'] = '在提示中显示坐骑奖励并跟踪其收集状态。'
 L['options_pet_rewards'] = '显示宠物奖励'
-L['options_pet_rewards_desc'] = '在提示和追踪其收集状态显示宠物奖励。'
+L['options_pet_rewards_desc'] = '在提示中显示宠物奖励并跟踪其收集状态。'
 L['options_toy_rewards'] = '显示玩具奖励'
-L['options_toy_rewards_desc'] = '在提示和追踪其收集状态显示玩具奖励。'
+L['options_toy_rewards_desc'] = '在提示中显示玩具奖励并跟踪其收集状态。'
 L['options_transmog_rewards'] = '显示幻化奖励'
-L['options_transmog_rewards_desc'] = '在提示和追踪其收集状态显示幻化奖励。'
+L['options_transmog_rewards_desc'] = '在提示中显示幻化奖励并跟踪其收集状态。'
 L['options_all_transmog_rewards'] = '显示无法获取的幻化奖励'
 L['options_all_transmog_rewards_desc'] = '显示其它职业可以获取的幻化奖励。'
 

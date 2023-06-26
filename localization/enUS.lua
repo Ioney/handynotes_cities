@@ -20,7 +20,7 @@ L['trainer_fishing'] = 'Fishing Trainer'
 L['options_icons_mailbox'] = _G.MINIMAP_TRACKING_MAILBOX
 L['options_icons_mailbox_desc'] = 'Shows the position of Mailboxes.'
 L['options_icons_innkeeper'] = _G.MINIMAP_TRACKING_INNKEEPER
-L['options_icons_innkeeper_desc'] = 'Shows the position of Inkeepers.'
+L['options_icons_innkeeper_desc'] = 'Shows the position of Innkeepers.'
 L['options_icons_banker'] = _G.MINIMAP_TRACKING_BANKER
 L['options_icons_banker_desc'] = 'Shows the position of Bankers or Banks.'
 L['options_icons_auctioneer'] = _G.MINIMAP_TRACKING_AUCTIONEER
@@ -34,7 +34,7 @@ L['options_icons_transmogrifier_desc'] = 'Shows the position of Transmogrifiers.
 L['options_icons_stablemaster'] = _G.MINIMAP_TRACKING_STABLEMASTER
 L['options_icons_stablemaster_desc'] = 'Shows the position of Stablemasters.'
 L['options_icons_flightmaster'] = _G.MINIMAP_TRACKING_FLIGHTMASTER
-L['options_icons_flightmaster_desc'] = 'Shows the position of Flightmasters.'
+L['options_icons_flightmaster_desc'] = 'Shows the position of Flight Masters.'
 L['options_icons_profession'] = _G.MINIMAP_TRACKING_TRAINER_PROFESSION
 L['options_icons_profession_desc'] = 'Shows the position of Profession Trainers.'
 
